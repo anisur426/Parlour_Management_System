@@ -1,0 +1,296 @@
+⭐ 1. Introduction
+
+The Beauty Parlour Management System is a complete web-based application designed to simplify and modernize all activities in a beauty parlour.
+This system is developed using PHP, and MySQL is used as the backend database.
+
+The main purpose of this system is to—
+
+Allow customers to easily book appointments online
+
+Enable the admin to manage all bookings, services, staff, and users
+
+Digitally manage a parlour's day-to-day operations
+
+Today, most businesses are going online.
+For a beauty parlour, having an online booking system has become essential.
+This system is designed to solve that need efficiently.
+
+⭐ 2. Main Purpose of the System
+
+The primary objectives of the Beauty Parlour Management System are—
+
+✔️ 1) Customers can select services online
+
+Examples:
+
+Facial
+
+Haircut
+
+Makeup
+
+Bridal Service
+
+Spa
+
+Eyebrow
+
+Hair Treatment, etc.
+
+✔️ 2) Customers can choose a specific date and time and book an appointment.
+✔️ 3) Admin can Approve or Reject the booking request.
+✔️ 4) A secure login panel is available for—
+
+Admin
+
+Staff
+
+User
+
+Each user type gets a separate dashboard.
+
+✔️ 5) All booking and service data are stored in a database.
+✔️ 6) The system is responsive and user-friendly.
+⭐ 3. Benefits of the System
+🌸 Benefits for Customers
+
+Can book appointments online from anywhere
+
+Can choose date and time easily
+
+Can view service prices and details before booking
+
+Can check booking status anytime
+
+Can manage their profile
+
+🌸 Benefits for Admin
+
+View complete booking list
+
+Add/Edit/Delete services
+
+Manage staff
+
+Manage users
+
+Approve or reject appointments
+
+View reports
+
+🌸 Benefits for the Business
+
+All records are stored safely in the system
+
+No need for paper documents
+
+Fewer chances of mistakes
+
+Saves time
+
+Makes the business modern and more professional
+
+⭐ 4. Main System Modules
+🔹 A) User Module
+
+After registration, customers can—
+
+Create Account
+
+Login / Logout
+
+View Services
+
+Select desired services
+
+Fill booking form
+
+Choose date & time
+
+Book Appointment
+
+Check booking status
+
+Manage Profile
+
+🔹 B) Admin Module
+
+Admin can—
+
+View Dashboard (summary)
+
+Manage Users
+
+Manage Staff
+
+Add / Update / Delete Services
+
+Manage Appointments
+
+Approve / Reject Bookings
+
+Update Contact Information
+
+Configure Website Settings
+
+Logout
+
+🔹 C) Staff Module
+
+Staff panel includes—
+
+Staff Login
+
+View assigned appointments
+
+Daily work list
+
+Profile
+
+⭐ 5. Database Structure
+
+This system generally includes these tables:
+
+1️⃣ users
+
+id
+
+name
+
+email
+
+phone
+
+password
+
+2️⃣ services
+
+id
+
+service_name
+
+price
+
+duration
+
+description
+
+3️⃣ appointments
+
+id
+
+user_id
+
+service_id
+
+date
+
+time
+
+status (Pending / Approved / Rejected)
+
+4️⃣ staff
+
+id
+
+name
+
+email
+
+phone
+
+role
+
+5️⃣ admin
+
+username
+
+password
+
+⭐ 6. Technologies Used
+🔹 Frontend:
+
+HTML → Page structure
+
+CSS → Styling
+
+Bootstrap → Responsive design
+
+JavaScript → User interactivity
+
+jQuery → Enhanced UI actions
+
+Ajax → Load data without reloading page
+
+🔹 Backend:
+
+PHP → Server-side logic
+
+MySQL → Database
+
+⭐ 7. How the System Works (Workflow)
+
+➤ Step 1: User Registration
+➤ Step 2: User Login
+➤ Step 3: Choose Service
+➤ Step 4: Select Date & Time
+➤ Step 5: Appointment Request Sent
+➤ Step 6: Admin Approves / Rejects the request
+➤ Step 7: User sees the updated status
+
+⭐ 8. Installation Steps
+
+Download the ZIP file
+
+Place it inside XAMPP → htdocs
+
+Open phpMyAdmin and create a database named: salon_management
+
+Import the provided .sql file
+
+Open the project in browser:
+
+http://localhost/FolderName/
+
+⭐ 9. Default Login Information
+✔️ User Login:
+
+Email: ram@gmail.com
+
+Password: ram12345
+
+✔️ Staff Login:
+
+Email: dilu@gmail.com
+
+Password: dilu1234
+
+✔️ Admin Login:
+
+Username: admin
+
+Password: admin
+
+⭐ 10. Use Cases
+
+This system can be used by—
+
+Small or large beauty parlours
+
+SPA centers
+
+Barber shops
+
+Bridal makeup parlours
+
+Unisex salons
+
+Using the system helps—
+
+Improve data management
+
+Increase customer satisfaction
+
+Reduce errors
+
+Make the business more modern
