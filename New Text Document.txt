@@ -1,0 +1,3 @@
+git branch -M main
+git remote add origin https://github.com/anisur426/My_project-1292426-.git
+git push -u origin main
