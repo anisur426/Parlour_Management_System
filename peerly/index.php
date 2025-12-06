@@ -55,17 +55,17 @@
                         <ul class="navbar-menu">
                             <li><a href="index.html">Home</a></li>
                             <li>
-                                <a href="#">Spa</a>
+                                <a href="#">Service</a>
                                 <ul class="sub-menu">
                                     <li>
-                                        <a href="#">Spa Service</a>
+                                        <a href="#">Spa</a>
                                         <ul class="sub-menu">
                                             <li><a href="spa-service.html">Spa Service</a></li>
                                             <li><a href="hot-stone-spa.html">Hot Stone Spa</a></li>
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="#">Our Therapy</a>
+                                        <a href="#">Therapy</a>
                                         <ul class="sub-menu">
                                             <li><a href="our-therapy.html">Our Therapy</a></li>
                                             <li><a href="therapy-details.html">Therapy Details</a></li>
@@ -74,6 +74,7 @@
                                 </ul>
                             </li>
                             <li><a href="packages.html">Packages</a></li>
+<!-- 
                             <li>
                                 <a href="#">Shop</a>
                                 <ul class="sub-menu">
@@ -84,6 +85,7 @@
                                     <li><a href="produtc-details-right-sidebar.html">Product Details Right Sidebar</a></li>
                                 </ul>
                             </li>
+                            -->
                             <li>
                                 <a href="#">Pages</a>
                                 <ul class="sub-menu">
