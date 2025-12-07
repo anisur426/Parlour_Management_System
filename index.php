@@ -55,7 +55,7 @@
                         <ul class="navbar-menu">
                             <li><a href="index.html">Home</a></li>
                             <li>
-                                <a href="#"> Service</a>
+                                <a href="#">Service</a>
                                 <ul class="sub-menu">
                                     <li>
                                         <a href="#">Spa</a>
@@ -74,6 +74,7 @@
                                 </ul>
                             </li>
                             <li><a href="packages.html">Packages</a></li>
+<!-- 
                             <li>
                                 <a href="#">Shop</a>
                                 <ul class="sub-menu">
@@ -84,6 +85,7 @@
                                     <li><a href="produtc-details-right-sidebar.html">Product Details Right Sidebar</a></li>
                                 </ul>
                             </li>
+                            -->
                             <li>
                                 <a href="#">Pages</a>
                                 <ul class="sub-menu">
@@ -341,183 +343,290 @@
         <!-- Offcanvas End -->
 
 
-        <!-- Page Banner Start -->
-        <div class="section page-banner" style="background-image: url(assets/images/page-banner.webp);">
-            <div class="container">
+        <!-- Slider Start -->
+        <div class="section slider-area slider-active">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
 
-                <!-- Page Banner Content Start -->
-                <div class="page-banner-content">
-                    <h2 class="title">Our Spa</h2>
-                    <p>Peerly is the best Spa therapy is the best way of Spa perfectly simple and easy to distinguish power</p>
-                    <ul class="breadcrumb">
-                        <li><a href="index.html">Home</a></li>
-                        <li>Spa</li>
-                    </ul>
+                    <!-- Single Slider Start -->
+                    <div class="swiper-slide animation-style-01 single-slider d-flex align-items-center" style="background-image: url(assets/images/slider/slider-1.webp);">
+                        <div class="container">
+                            <div class="slider-content">
+                                <h1 class="title">Relaxation <br> Bath with the <br> Aroma Therapy</h1>
+                                <ul class="slider-meta">
+                                    <li><a href="#" class="btn btn-primary btn-hover-white">Book Now</a></li>
+                                    <li><a href="https://www.youtube-nocookie.com/embed/Ga6RYejo6Hk" class="video-play glightbox"><span class="icon"><i class="fa fa-play"></i></span> Watch Video</a></li>
+                                </ul>
+                                <ul class="slider-social">
+                                    <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Single Slider End -->
+
+                    <!-- Single Slider Start -->
+                    <div class="swiper-slide animation-style-01 single-slider d-flex align-items-center" style="background-image: url(assets/images/slider/slider-2.webp);">
+                        <div class="container">
+                            <div class="slider-content content-white">
+                                <h1 class="title">Relaxation <br> Bath with the <br> Aroma Therapy</h1>
+                                <ul class="slider-meta">
+                                    <li><a href="#" class="btn btn-white btn-hover-primary">Book Now</a></li>
+                                    <li><a href="https://www.youtube-nocookie.com/embed/Ga6RYejo6Hk" class="video-play glightbox"><span class="icon"><i class="fa fa-play"></i></span> Watch Video</a></li>
+                                </ul>
+                                <ul class="slider-social">
+                                    <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Single Slider End -->
+
                 </div>
-                <!-- Page Banner Content End -->
             </div>
-
-            <!-- Page Social Start -->
-            <div class="page-social">
-                <div class="container">
-
-                    <ul class="social">
-                        <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                    </ul>
-
-                </div>
-            </div>
-            <!-- Page Social End -->
-
         </div>
-        <!-- Page Banner End -->
+        <!-- Slider End -->
+
+        <!-- Feature Start -->
+        <div class="section section-padding">
+            <div class="container">
+                <!-- Features Wrapper Start -->
+                <div class="features-wrapper row row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-center">
+                    <div class="col" data-aos="fade-up" data-aos-delay="200">
+                        <!-- Single Features Start -->
+                        <div class="single-feature text-center">
+                            <img src="assets/images/features/icon-1.webp" height="156" alt="feature">
+                            <h4 class="title"><a href="hot-stone-spa.html">Massage Therapy</a></h4>
+                            <p>Message Therapy is the best way of Spa cases are perfectly simple and easy to distinguish. In a free hour,power</p>
+                            <a href="hot-stone-spa.html" class="more">Read more</a>
+                        </div>
+                        <!-- Single Features End -->
+                    </div>
+                    <div class="col active" data-aos="fade-up" data-aos-delay="400">
+                        <!-- Single Features Start -->
+                        <div class="single-feature text-center">
+                            <img src="assets/images/features/icon-2.webp" height="156" alt="feature">
+                            <h4 class="title"><a href="hot-stone-spa.html">Aroma Therapy</a></h4>
+                            <p>Message Therapy is the best way of Spa cases are perfectly simple and easy to distinguish. In a free hour,power</p>
+                            <a href="hot-stone-spa.html" class="more">Read more</a>
+                        </div>
+                        <!-- Single Features End -->
+                    </div>
+                    <div class="col" data-aos="fade-up" data-aos-delay="600">
+                        <!-- Single Features Start -->
+                        <div class="single-feature text-center">
+                            <img src="assets/images/features/icon-3.webp" height="156" alt="feature">
+                            <h4 class="title"><a href="hot-stone-spa.html">Organic Therapy</a></h4>
+                            <p>Message Therapy is the best way of Spa cases are perfectly simple and easy to distinguish. In a free hour,power</p>
+                            <a href="hot-stone-spa.html" class="more">Read more</a>
+                        </div>
+                        <!-- Single Features End -->
+                    </div>
+                </div>
+                <!-- Features Wrapper End -->
+            </div>
+        </div>
+        <!-- Feature End -->
+
+        <!-- About Start -->
+        <div class="section section-padding-02 about-section">
+
+            <img class="shape-1 movebounce-03" src="assets/images/shape/shape-5.webp" width="420" height="210" alt="Shape">
+
+            <div class="container">
+                <!-- About Wrapper Start -->
+                <div class="about-wrapper">
+                    <div class="row justify-content-center align-items-center">
+                        <div class="col-lg-6 col-md-8">
+                            <!-- About Image Start -->
+                            <div class="about-image" data-aos="fade-up" data-aos-delay="200">
+                                <img src="assets/images/about.webp" width="540" height="565" alt="About">
+                            </div>
+                            <!-- About Image End -->
+                        </div>
+                        <div class="col-lg-6">
+                            <!-- About Image Start -->
+                            <div class="about-content" data-aos="fade-up" data-aos-delay="200">
+                                <!-- Section Title Start -->
+                                <div class="section-title">
+                                    <h6 class="sub-title">Wellcom to Peerly</h6>
+                                    <h2 class="title">Incredible & <br> Relaxiable Spa <img class="shape" src="assets/images/shape/shape-15.webp" alt="Shape"></h2>
+                                </div>
+                                <!-- Section Title End -->
+                                <p class="text">We have more than 20 years of Exprience with 100% client Satisfaction</p>
+                                <p>Peerly is the best Spa therapy is the best way of Spa cases are some perfectly simple and easy to distinguish. In a free hour,power can help you for a relaxation and fresh mind with great enjoy take an example, which of us ever undertakes laborious physical satisfaction</p>
+                                <a href="about.html" class="btn btn-primary btn-hover-dark">Learn more</a>
+                            </div>
+                            <!-- About Image End -->
+                        </div>
+                    </div>
+                </div>
+                <!-- About Wrapper End -->
+            </div>
+        </div>
+        <!-- About End -->
 
         <!-- Services Start -->
-        <div class="section section-padding-02">
+        <div class="section services-section" style="background-image: url(assets/images/patan-bg.webp);">
+
+            <!-- Services Wrapper Start -->
+            <div class="services-wrapper">
+
+                <!-- Services Main Content Start -->
+                <div class="services-main-content" data-aos="fade-up" data-aos-delay="200">
+
+                    <img class="shape-1 movebounce-02" src="assets/images/shape/shape-6.webp" alt="Shape">
+                    <img class="shape-2 movebounce-03" src="assets/images/shape/shape-7.webp" alt="Shape">
+                    <img class="shape-3" src="assets/images/shape/shape-8.webp" alt="Shape">
+
+                    <!-- Section Title Start -->
+                    <div class="section-title text-center">
+                        <h6 class="sub-title">Service</h6>
+                        <h2 class="title">Our Spa Service</h2>
+                        <p>Peerly is the best Spa therapy is the best way of Spa cases are some perfectly simple and easy to distinguish free hour</p>
+                    </div>
+                    <!-- Section Title End -->
+
+                    <div class="services-active">
+                        <div class="swiper-container ">
+                            <div class="swiper-wrapper ">
+                                <div class="swiper-slide">
+                                    <!-- Services Start -->
+                                    <div class="single-services text-center">
+                                        <div class="services-image">
+                                            <a href="therapy-details.html"><img src="assets/images/services/services-1.webp" width="233" height="233" alt="services"></a>
+                                            <span class="price"> $75</span>
+                                        </div>
+                                        <div class="services-content">
+                                            <h4 class="title"><a href="therapy-details.html">Hot Stone</a></h4>
+                                            <p>Hot Stone Spa is the best your health and refresh</p>
+                                        </div>
+                                    </div>
+                                    <!-- Services End -->
+                                </div>
+                                <div class="swiper-slide">
+                                    <!-- Services Start -->
+                                    <div class="single-services text-center">
+                                        <div class="services-image">
+                                            <a href="therapy-details.html"><img src="assets/images/services/services-2.webp" width="233" height="233" alt="services"></a>
+                                            <span class="price"> $64</span>
+                                        </div>
+                                        <div class="services-content">
+                                            <h4 class="title"><a href="therapy-details.html">Face Scrub</a></h4>
+                                            <p>Face Scrub Spa is the best your health and refresh</p>
+                                        </div>
+                                    </div>
+                                    <!-- Services End -->
+                                </div>
+                                <div class="swiper-slide">
+                                    <!-- Services Start -->
+                                    <div class="single-services text-center">
+                                        <div class="services-image">
+                                            <a href="therapy-details.html"><img src="assets/images/services/services-3.webp" width="233" height="233" alt="services"></a>
+                                            <span class="price"> $75</span>
+                                        </div>
+                                        <div class="services-content">
+                                            <h4 class="title"><a href="therapy-details.html">Oil Massage</a></h4>
+                                            <p>Oil Massage Spa is the best your health and refresh</p>
+                                        </div>
+                                    </div>
+                                    <!-- Services End -->
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Services Main Content End -->
+
+                <!-- Services Background Start -->
+                <div class="services-background" style="background-image: url(assets/images/services/service-bg.webp);"></div>
+                <!-- Services Background End -->
+
+            </div>
+            <!-- Services Wrapper End -->
+
+        </div>
+        <!-- Services End -->
+
+        <!-- Why Choose US Start -->
+        <div class="section section-padding">
             <div class="container">
 
                 <!-- Section Title Start -->
                 <div class="section-title text-center">
-                    <h6 class="sub-title">Peerly Spa Service</h6>
-                    <h2 class="title">We provide best Spa Services <br> for our clients <u>satisfaction</u> </h2>
+                    <h6 class="sub-title">Good For Health</h6>
+                    <h2 class="title">Why we are different </h2>
                     <p>Peerly is the best Spa therapy is the best way of Spa cases are some perfectly simple and easy to distinguish free hour</p>
                 </div>
                 <!-- Section Title End -->
 
-                <!-- Service Wrapper Start -->
-                <div class="service-wrapper">
-                    <div class="row row-cols-md-3 row-cols-sm-2 row-cols-1">
-                        <div class="col">
-                            <!-- Services Start -->
-                            <div class="single-services text-center" data-aos="fade-up" data-aos-delay="200">
-                                <div class="services-image">
-                                    <a href="therapy-details.html"><img src="assets/images/services/services-1.webp" width="233" height="233" alt="services"></a>
-                                    <span class="price"> $75</span>
-                                </div>
-                                <div class="services-content">
-                                    <h4 class="title"><a href="therapy-details.html">Hot Stone</a></h4>
-                                    <p>Hot Stone Spa is the best your health and refresh</p>
-                                </div>
+                <!-- Choose Wrapper Start -->
+                <div class="choose-wrapper">
+                    <div class="row justify-content-center align-items-center gx-lg-0">
+                        <div class="col-lg-3 col-sm-6 order-2 order-lg-1">
+                            <!-- Single Choose Start -->
+                            <div class="single-choose" data-aos="fade-up" data-aos-delay="100">
+                                <h4 class="title">Exprienced Specialists</h4>
+                                <p>Message Therapy is the best way of Spa cases are perfectly simple and easy</p>
                             </div>
-                            <!-- Services End -->
+                            <!-- Single Choose End -->
+                            <!-- Single Choose Start -->
+                            <div class="single-choose" data-aos="fade-up" data-aos-delay="200">
+                                <h4 class="title">100% Safe & Natural</h4>
+                                <p>Message Therapy is the best way of Spa cases are perfectly simple and easy</p>
+                            </div>
+                            <!-- Single Choose End -->
+                            <!-- Single Choose Start -->
+                            <div class="single-choose" data-aos="fade-up" data-aos-delay="300">
+                                <h4 class="title">Special gifts & Offers</h4>
+                                <p>Message Therapy is the best way of Spa cases are perfectly simple and easy</p>
+                            </div>
+                            <!-- Single Choose End -->
                         </div>
-                        <div class="col">
-                            <!-- Services Start -->
-                            <div class="single-services text-center" data-aos="fade-up" data-aos-delay="400">
-                                <div class="services-image">
-                                    <a href="therapy-details.html"><img src="assets/images/services/services-2.webp" width="233" height="233" alt="services"></a>
-                                    <span class="price"> $64</span>
-                                </div>
-                                <div class="services-content">
-                                    <h4 class="title"><a href="therapy-details.html">Face Scrub</a></h4>
-                                    <p>Face Scrub Spa is the best your health and refresh</p>
+                        <div class="col-lg-6 order-1 col-md-8 order-lg-2">
+                            <!-- Choose Image Start -->
+                            <div class="choose-image" data-aos="fade-up" data-aos-delay="200">
+                                <div class="image">
+                                    <img src="assets/images/choose.webp" width="488" height="499" alt="Choose">
                                 </div>
                             </div>
-                            <!-- Services End -->
+                            <!-- Choose Image End -->
                         </div>
-                        <div class="col">
-                            <!-- Services Start -->
-                            <div class="single-services text-center" data-aos="fade-up" data-aos-delay="600">
-                                <div class="services-image">
-                                    <a href="therapy-details.html"><img src="assets/images/services/services-3.webp" width="233" height="233" alt="services"></a>
-                                    <span class="price"> $75</span>
-                                </div>
-                                <div class="services-content">
-                                    <h4 class="title"><a href="therapy-details.html">Oil Massage</a></h4>
-                                    <p>Oil Massage Spa is the best your health and refresh</p>
-                                </div>
+                        <div class="col-lg-3 col-sm-6 order-3 order-lg-3">
+                            <!-- Single Choose Start -->
+                            <div class="single-choose" data-aos="fade-up" data-aos-delay="100">
+                                <h4 class="title">Qulaity & Natural Herbs</h4>
+                                <p>Message Therapy is the best way of Spa cases are perfectly simple and easy</p>
                             </div>
-                            <!-- Services End -->
-                        </div>
-                        <div class="col">
-                            <!-- Services Start -->
-                            <div class="single-services text-center" data-aos="fade-up" data-aos-delay="200">
-                                <div class="services-image">
-                                    <a href="therapy-details.html"><img src="assets/images/services/services-5.webp" width="233" height="233" alt="services"></a>
-                                    <span class="price"> $48</span>
-                                </div>
-                                <div class="services-content">
-                                    <h4 class="title"><a href="therapy-details.html">Tea Therapy</a></h4>
-                                    <p>Tea Therapy Spa is the best your health and refresh</p>
-                                </div>
+                            <!-- Single Choose End -->
+                            <!-- Single Choose Start -->
+                            <div class="single-choose" data-aos="fade-up" data-aos-delay="200">
+                                <h4 class="title">Unique from other Spa</h4>
+                                <p>Message Therapy is the best way of Spa cases are perfectly simple and easy</p>
                             </div>
-                            <!-- Services End -->
-                        </div>
-                        <div class="col">
-                            <!-- Services Start -->
-                            <div class="single-services text-center" data-aos="fade-up" data-aos-delay="400">
-                                <div class="services-image">
-                                    <a href="therapy-details.html"><img src="assets/images/services/services-6.webp" width="233" height="233" alt="services"></a>
-                                    <span class="price"> $52</span>
-                                </div>
-                                <div class="services-content">
-                                    <h4 class="title"><a href="therapy-details.html">Body Treatment</a></h4>
-                                    <p>Body Treatment Spa is best your health and refresh</p>
-                                </div>
+                            <!-- Single Choose End -->
+                            <!-- Single Choose Start -->
+                            <div class="single-choose" data-aos="fade-up" data-aos-delay="300">
+                                <h4 class="title">Spa Consultancy</h4>
+                                <p>Message Therapy is the best way of Spa cases are perfectly simple and easy</p>
                             </div>
-                            <!-- Services End -->
-                        </div>
-                        <div class="col">
-                            <!-- Services Start -->
-                            <div class="single-services text-center" data-aos="fade-up" data-aos-delay="600">
-                                <div class="services-image">
-                                    <a href="therapy-details.html"><img src="assets/images/services/services-7.webp" width="233" height="233" alt="services"></a>
-                                    <span class="price"> $85</span>
-                                </div>
-                                <div class="services-content">
-                                    <h4 class="title"><a href="therapy-details.html">Herbal Massage</a></h4>
-                                    <p>Herbal Massage Spa is the best your health and refresh</p>
-                                </div>
-                            </div>
-                            <!-- Services End -->
+                            <!-- Single Choose End -->
                         </div>
                     </div>
                 </div>
-                <!-- Service Wrapper End -->
-            </div>
-        </div>
-        <!-- Services End -->
-
-        <!-- Call to Action Start -->
-        <div class="section call-to-action-serction" style="background-image: url(assets/images/patan-bg-2.webp);">
-            <!-- Call to Action bg Start -->
-            <div class="call-to-action-bg" style="background-image: url(assets/images/cta-bg.webp);"></div>
-            <!-- Call to Action bg End -->
-
-            <!-- Call to Action Content Start -->
-            <div class="call-to-action-content section-padding-02">
-
-                <img class="shape-1 movebounce-01" width="194" height="227" src="assets/images/shape/shape-10.webp" alt="Shape">
-
-                <img class="shape-2" src="assets/images/shape/shape-11.webp" width="146" height="145" alt="Shape">
-
-                <!-- Call to Action Wrapper Start -->
-                <div class="call-to-action-wrapper text-center" data-aos="fade-up" data-aos-delay="200">
-                    <!-- Section Title Start -->
-                    <div class="section-title text-center">
-                        <h6 class="sub-title">Special Offer</h6>
-                        <h2 class="title">Spa Weekend!</h2>
-                        <p>Peerly is the best Spa therapy is the best way of Spa cases are some perfectly simple and easy to distinguish free hour</p>
-                    </div>
-                    <!-- Section Title End -->
-                    <h4 class="discount">Get up to 65% Discount</h4>
-                    <a href="contact.html" class="btn btn-primary btn-hover-dark">Book Now</a>
-                </div>
-                <!-- Call to Action Wrapper End -->
-
-                <img class="shape-3 movebounce-03" src="assets/images/shape/shape-12.webp" width="216" height="190" alt="Shape">
-
-                <img class="shape-4 movebounce-02" src="assets/images/shape/shape-13.webp" width="363" height="231" alt="Shape">
+                <!-- Choose Wrapper End -->
 
             </div>
-            <!-- Call to Action Content End -->
         </div>
-        <!-- Call to Action End -->
+        <!-- Why Choose US End -->
 
         <!-- Spa Pricing Start -->
-        <div class="section section-padding">
+        <div class="section section-padding-02">
             <div class="container">
                 <!-- Spa Pricing Wrapper Start -->
                 <div class="spa-pricing-wrapper">
@@ -728,6 +837,42 @@
         </div>
         <!-- Spa Pricing End -->
 
+        <!-- Call to Action Start -->
+        <div class="section call-to-action-serction" style="background-image: url(assets/images/patan-bg-2.webp);">
+            <!-- Call to Action bg Start -->
+            <div class="call-to-action-bg" style="background-image: url(assets/images/cta-bg.webp);"></div>
+            <!-- Call to Action bg End -->
+
+            <!-- Call to Action Content Start -->
+            <div class="call-to-action-content section-padding-02">
+
+                <img class="shape-1 movebounce-01" width="194" height="227" src="assets/images/shape/shape-10.webp" alt="Shape">
+
+                <img class="shape-2" src="assets/images/shape/shape-11.webp" width="146" height="145" alt="Shape">
+
+                <!-- Call to Action Wrapper Start -->
+                <div class="call-to-action-wrapper text-center" data-aos="fade-up" data-aos-delay="200">
+                    <!-- Section Title Start -->
+                    <div class="section-title text-center">
+                        <h6 class="sub-title">Special Offer</h6>
+                        <h2 class="title">Spa Weekend!</h2>
+                        <p>Peerly is the best Spa therapy is the best way of Spa cases are some perfectly simple and easy to distinguish free hour</p>
+                    </div>
+                    <!-- Section Title End -->
+                    <h4 class="discount">Get up to 65% Discount</h4>
+                    <a href="contact.html" class="btn btn-primary btn-hover-dark">Book Now</a>
+                </div>
+                <!-- Call to Action Wrapper End -->
+
+                <img class="shape-3 movebounce-03" src="assets/images/shape/shape-12.webp" width="216" height="190" alt="Shape">
+
+                <img class="shape-4 movebounce-02" src="assets/images/shape/shape-13.webp" width="363" height="231" alt="Shape">
+
+            </div>
+            <!-- Call to Action Content End -->
+        </div>
+        <!-- Call to Action End -->
+
         <!-- Testimonial Start -->
         <div class="section section-padding testimonial-section">
 
@@ -842,9 +987,71 @@
                     <div class="swiper-button-prev"></div>
                 </div>
                 <!-- Testimonial Wrapper End -->
+
             </div>
         </div>
         <!-- Testimonial End -->
+
+        <!-- Blog Start -->
+        <div class="section section-padding">
+            <div class="container">
+                <!-- Blog Wrapper Start -->
+                <div class="blog-wrapper">
+                    <div class="row">
+                        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                            <!-- Blog Sidebar Title Start -->
+                            <div class="blog-sidebar-title">
+                                <!-- Section Title Start -->
+                                <div class="section-title">
+                                    <h6 class="sub-title">Blog</h6>
+                                    <h2 class="title">Latest Post <br> from Blog <img class="shape" src="assets/images/shape/shape-15.webp" alt="Shape"></h2>
+                                </div>
+                                <!-- Section Title End -->
+                                <p class="text">Deep discuss about Spa and Therapy Treamment</p>
+                                <a href="blog-left-sidebar.html" class="btn btn-primary btn-hover-dark">View more</a>
+                            </div>
+                            <!-- Blog Sidebar Title End -->
+                        </div>
+                        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                            <!-- Single Blog Start -->
+                            <div class="single-blog">
+                                <div class="blgo-image">
+                                    <a href="blog-details-right-sidebar.html"><img src="assets/images/blog/blog-1.webp" width="314" height="238" alt="Blog"></a>
+                                </div>
+                                <div class="blgo-content">
+                                    <ul class="meta">
+                                        <li><a href="#"><i class="fa fa-calendar"></i> 20 Aug, 2022</a></li>
+                                        <li><a href="#"><i class="fa fa-user-o"></i> Thomas</a></li>
+                                    </ul>
+                                    <h3 class="title"><a href="blog-details-right-sidebar.html">Benefit of Hot Ston Spa for your health & life.</a></h3>
+                                </div>
+                                <img src="assets/images/shape/shape-4.webp" class="shape" alt="Shape">
+                            </div>
+                            <!-- Single Blog End -->
+                        </div>
+                        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+                            <!-- Single Blog Start -->
+                            <div class="single-blog">
+                                <div class="blgo-image">
+                                    <a href="blog-details-right-sidebar.html"><img src="assets/images/blog/blog-2.webp" width="314" height="238" alt="Blog"></a>
+                                </div>
+                                <div class="blgo-content">
+                                    <ul class="meta">
+                                        <li><a href="#"><i class="fa fa-calendar"></i> 20 Aug, 2022</a></li>
+                                        <li><a href="#"><i class="fa fa-user-o"></i> Thomas</a></li>
+                                    </ul>
+                                    <h3 class="title"><a href="blog-details-right-sidebar.html">Facial Scrub is natural treatment for face.</a></h3>
+                                </div>
+                                <img src="assets/images/shape/shape-4.webp" class="shape" alt="Shape">
+                            </div>
+                            <!-- Single Blog End -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Blog Wrapper End -->
+            </div>
+        </div>
+        <!-- Blog End -->
 
         <!-- Brand Start -->
         <div class="section section-padding-02">
@@ -1047,8 +1254,6 @@
         <!--Back To Start-->
         <button id="backBtn" class="back-to-top"><i class="icofont-simple-up"></i></button>
         <!--Back To End-->
-
-
 
     </div>
 
