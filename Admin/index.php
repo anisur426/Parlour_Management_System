@@ -1,333 +1,111 @@
+<?php
+include_once("inc/db_config.php");
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light" data-menu-color="brand" data-topbar-color="light">
 
 <head>
     <meta charset="utf-8" />
-    <title>Dashboard | Dashtrap - Responsive Bootstrap 5 Admin Dashboard</title>
+    <title>Log In | Dashtrap - Responsive Bootstrap 5 Admin Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
     <meta content="Myra Studio" name="author" />
 
     <!-- App favicon -->
-    <link rel="shortcut icon" href="dist/assets/images/favicon.ico">
-
-    <link href="dist/dist/assets/libs/morris.js/morris.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
 
     <!-- App css -->
-    <link href="dist/assets/css/style.min.css" rel="stylesheet" type="text/css">
-    <link href="dist/assets/css/icons.min.css" rel="stylesheet" type="text/css">
-    <script src="dist/assets/js/config.js"></script>
+    <link href="assets/css/style.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css">
+    <script src="assets/js/config.js"></script>
 </head>
 
-<body>
+<body class="bg-primary d-flex justify-content-center align-items-center min-vh-100 p-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-4 col-md-5">
+                <div class="card">
+                    <div class="card-body p-4">
 
-    <!-- Begin page -->
-    <div class="layout-wrapper">
+                        <div class="text-center w-75 mx-auto auth-logo mb-4">
+                            <a href="index.html" class="logo-dark">
+                                <span><img src="assets/images/logo-dark.png" alt="" height="22"></span>
+                            </a>
 
-        <!-- ========== Left Sidebar ========== -->
-      
-
-        <?php include ('inc/left_Sidebar.php'); ?>
-        <!-- ============================================================== -->
-        <!-- Start Page Content here -->
-        <!-- ============================================================== -->
-
-        <div class="page-content">
-
-            <!-- ========== Topbar Start ========== -->
-         
-            <?php include('inc/topbar.php'); ?>
-            <!-- ========== Topbar End ========== -->
-
-            <div class="px-3">
-
-                <!-- Start Content-->
-                <div class="container-fluid">
-
-                    <!-- start page title -->
-                    <div class="py-3 py-lg-4">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <h4 class="page-title mb-0">Dashboard</h4>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="d-none d-lg-block">
-                                    <ol class="breadcrumb m-0 float-end">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Dashtrap</a></li>
-                                        <li class="breadcrumb-item active">Dashboard</li>
-                                    </ol>
-                                </div>
-                            </div>
+                            <a href="index.html" class="logo-light">
+                                <span><img src="assets/images/logo-light.png" alt="" height="22"></span>
+                            </a>
                         </div>
-                    </div>
-                    <!-- end page title -->
-                    
 
-                    <div class="row">
-                        <div class="col-md-6 col-xl-3">
-                            <div class="card">
-                                <div class="card-body">
-   
-                                    <div class="mb-4">
+                        <form action="" method="post">
 
-                                        <span class="badge badge-soft-primary float-end">Daily</span>
-                                        <h3 class="card-title mb-0">Total Customer</h3>
-                                    </div>
-                                         <?php
-$query1 = mysqli_query($conn, "SELECT * FROM tbluser");
-$totalUser = mysqli_num_rows($query1);
-?>
-<div class="stats-right">
-    <label><?php echo $totalUser; ?></label>
-</div>
-<div class="row d-flex align-items-center mb-4">
-                                        <div class="col-8">
-                                            <h2 class="d-flex align-items-center mb-0">
-                                                1,15,187
-                                            </h2>
-                                        </div>
-                                        <div class="col-4 text-end">
-                                            <span class="text-muted">17.8% <i
-                                                    class="mdi mdi-arrow-down text-danger"></i></span>
-                                        </div>
-                                    </div>
-
-                                    <div class="progress shadow-sm" style="height: 5px;">
-                                        <div class="progress-bar bg-info" role="progressbar" style="width: 57%;"></div>
-                                    </div>
-                               
-
-                                </div>
-                                <!--end card body-->
-                            </div><!-- end card-->
-                        </div> <!-- end col-->
-
-                        <div class="col-md-6 col-xl-3">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="mb-4">
-                                        <span class="badge badge-soft-primary float-end">Daily</span>
-                                        <h3 class="card-title mb-0">Total Appointment</h3>
-                                    </div>
-                                    <div class="row d-flex align-items-center mb-4">
-                                        <div class="col-8">
-                                            <h2 class="d-flex align-items-center mb-0">
-                                                $1875.54
-                                            </h2>
-                                        </div>
-                                        <div class="col-4 text-end">
-                                            <span class="text-muted">18.71% <i
-                                                    class="mdi mdi-arrow-down text-danger"></i></span>
-                                        </div>
-                                    </div>
-
-                                    <div class="progress shadow-sm" style="height: 5px;">
-                                        <div class="progress-bar bg-danger" role="progressbar" style="width: 57%;">
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--end card body-->
-                            </div><!-- end card-->
-                        </div> <!-- end col-->
-
-                        <div class="col-md-6 col-xl-3">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="mb-4">
-                                        <span class="badge badge-soft-primary float-end">Daily</span>
-                                        <h3 class="card-title mb-0">Total Accepted Apt</h3>
-                                    </div>
-                                    <div class="row d-flex align-items-center mb-4">
-                                        <div class="col-8">
-                                            <h2 class="d-flex align-items-center mb-0">
-                                                $784.62
-                                            </h2>
-                                        </div>
-                                        <div class="col-4 text-end">
-                                            <span class="text-muted">57% <i
-                                                    class="mdi mdi-arrow-up text-success"></i></span>
-                                        </div>
-                                    </div>
-
-                                    <div class="progress shadow-sm" style="height: 5px;">
-                                        <div class="progress-bar bg-warning" role="progressbar" style="width: 57%;">
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--end card body-->
+                            <div class="form-group mb-3">
+                                <label class="form-label" for="emailaddress">Email address</label>
+                                <input name="email" class="form-control" type="email" id="emailaddress" required="" placeholder="Enter your email">
                             </div>
-                            <!--end card-->
-                        </div> <!-- end col-->
 
-                        <div class="col-md-6 col-xl-3">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="mb-4">
-                                        <span class="badge badge-soft-primary float-end">Daily</span>
-                                        <h3 class="card-title mb-0">Total Rejected Apt</h3>
-                                    </div>
-                                    <div class="row d-flex align-items-center mb-4">
-                                        <div class="col-8">
-                                            <h2 class="d-flex align-items-center mb-0">
-                                                1,15,187
-                                            </h2>
-                                        </div>
-                                        <div class="col-4 text-end">
-                                            <span class="text-muted">17.8% <i
-                                                    class="mdi mdi-arrow-down text-danger"></i></span>
-                                        </div>
-                                    </div>
+                            <div class="form-group mb-3">
+                                <a href="pages-recoverpw.html" class="text-muted float-end"><small></small></a>
+                                <label class="form-label" for="password">Password</label>
+                                <input name="password" class="form-control" type="password" required="" id="password" placeholder="Enter your password">
+                            </div>
 
-                                    <div class="progress shadow-sm" style="height: 5px;">
-                                        <div class="progress-bar bg-info" role="progressbar" style="width: 57%;"></div>
-                                    </div>
+                            <!-- <div class="form-group mb-3">
+                                <div class="">
+                                    <input class="form-check-input" type="checkbox" id="checkbox-signin" checked>
+                                    <label class="form-check-label ms-2" for="checkbox-signin">Remember me</label>
                                 </div>
-                                <!--end card body-->
-                            </div><!-- end card-->
-                        </div> <!-- end col-->
-                        
-                        <div class="col-md-6 col-xl-3">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="mb-4">
-                                        <span class="badge badge-soft-primary float-end">Daily</span>
-                                        <h3 class="card-title mb-0">Total Rejected Apt</h3>
-                                    </div>
-                                    <div class="row d-flex align-items-center mb-4">
-                                        <div class="col-8">
-                                            <h2 class="d-flex align-items-center mb-0">
-                                                1,15,187
-                                            </h2>
-                                        </div>
-                                        <div class="col-4 text-end">
-                                            <span class="text-muted">17.8% <i
-                                                    class="mdi mdi-arrow-down text-danger"></i></span>
-                                        </div>
-                                    </div>
+                            </div> -->
 
-                                    <div class="progress shadow-sm" style="height: 5px;">
-                                        <div class="progress-bar bg-info" role="progressbar" style="width: 57%;"></div>
-                                    </div>
-                                </div>
-                                <!--end card body-->
-                            </div><!-- end card-->
-                        </div> <!-- end col-->
-                         <div class="col-md-6 col-xl-3">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="mb-4">
-                                        <span class="badge badge-soft-primary float-end">Daily</span>
-                                        <h3 class="card-title mb-0">Total Rejected Apt</h3>
-                                    </div>
-                                    <div class="row d-flex align-items-center mb-4">
-                                        <div class="col-8">
-                                            <h2 class="d-flex align-items-center mb-0">
-                                                1,15,187
-                                            </h2>
-                                        </div>
-                                        <div class="col-4 text-end">
-                                            <span class="text-muted">17.8% <i
-                                                    class="mdi mdi-arrow-down text-danger"></i></span>
-                                        </div>
-                                    </div>
+                            <div class="form-group mb-0 text-center">
+                                <button name="login" class="btn btn-primary w-100" type="submit"> Log In </button>
+                            </div>
 
-                                    <div class="progress shadow-sm" style="height: 5px;">
-                                        <div class="progress-bar bg-info" role="progressbar" style="width: 57%;"></div>
-                                    </div>
-                                </div>
-                                <!--end card body-->
-                            </div><!-- end card-->
-                        </div> <!-- end col-->
-                         <div class="col-md-6 col-xl-3">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="mb-4">
-                                        <span class="badge badge-soft-primary float-end">Daily</span>
-                                        <h3 class="card-title mb-0">Total Services</h3>
-                                    </div>
-                                    <div class="row d-flex align-items-center mb-4">
-                                        <div class="col-8">
-                                            <h2 class="d-flex align-items-center mb-0">
-                                                $1875.54
-                                            </h2>
-                                        </div>
-                                        <div class="col-4 text-end">
-                                            <span class="text-muted">18.71% <i
-                                                    class="mdi mdi-arrow-down text-danger"></i></span>
-                                        </div>
-                                    </div>
+                        </form>
+                    </div> <!-- end card-body -->
+                </div>
 
-                                    <div class="progress shadow-sm" style="height: 5px;">
-                                        <div class="progress-bar bg-danger" role="progressbar" style="width: 57%;">
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--end card body-->
-                            </div><!-- end card-->
-                        </div> <!-- end col-->
-                         <div class="col-md-6 col-xl-3">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="mb-4">
-                                        <span class="badge badge-soft-primary float-end">Daily</span>
-                                        <h3 class="card-title mb-0">Total Services</h3>
-                                    </div>
-                                    <div class="row d-flex align-items-center mb-4">
-                                        <div class="col-8">
-                                            <h2 class="d-flex align-items-center mb-0">
-                                                $1875.54
-                                            </h2>
-                                        </div>
-                                        <div class="col-4 text-end">
-                                            <span class="text-muted">18.71% <i
-                                                    class="mdi mdi-arrow-down text-danger"></i></span>
-                                        </div>
-                                    </div>
+                <?php
+                if (isset($_POST['login'])) {
 
-                                    <div class="progress shadow-sm" style="height: 5px;">
-                                        <div class="progress-bar bg-danger" role="progressbar" style="width: 57%;">
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--end card body-->
-                            </div><!-- end card-->
-                        </div> <!-- end col-->
-                        
-                    </div>
-                    
-                     </div> <!-- container -->
+                    extract($_POST);
+                    $password = md5($password);
+                    $sql = "SELECT * FROM admin WHERE email='$email' AND password='$password'";
+                    $rawdata = $conn->query($sql);
+                    $row  = $rawdata->fetch_assoc();
+                    //ech $rawdata->num_rows;
+                    if ($rawdata->num_rows) {
 
-            </div> <!-- content -->
 
-            <!-- Footer Start -->
-          <?php include('inc/footer.php'); ?>
-            <!-- end Footer -->
 
+                        $_SESSION['email'] = $email;
+                        $_SESSION['name'] = $row['name'];
+
+
+                        header("Location:dashboard.php");
+                    } else {
+                        echo '<div class="alert alert-danger">invalid your email</div>';
+                    }
+                }
+                ?>
+                <div class="row mt-3">
+                    <div class="col-12 text-center">
+                        <p class="text-white-50"> <a href="pages-register.html" class="text-white-50 ms-1">Forgot your password?</a></p>
+                        <p class="text-white-50">Don't have an account? <a href="pages-register.html" class="text-white font-weight-medium ms-1">Sign Up</a></p>
+                    </div> <!-- end col -->
+                </div>
+                <!-- end row -->
+
+            </div> <!-- end col -->
         </div>
-
-        <!-- ============================================================== -->
-        <!-- End Page content -->
-        <!-- ============================================================== -->
-
+        <!-- end row -->
     </div>
-    <!-- END wrapper -->
 
     <!-- App js -->
-    <script src="dist/assets/js/vendor.min.js"></script>
-    <script src="dist/assets/js/app.js"></script>
-
-    <!-- Knob charts js -->
-    <script src="dist/assets/libs/jquery-knob/jquery.knob.min.js"></script>
-
-    <!-- Sparkline Js-->
-    <script src="dist/assets/libs/jquery-sparkline/jquery.sparkline.min.js"></script>
-
-    <script src="dist/assets/libs/morris.js/morris.min.js"></script>
-
-    <script src="dist/assets/libs/raphael/raphael.min.js"></script>
-
-    <!-- Dashboard init-->
-    <script src="dist/assets/js/pages/dashboard.js"></script>
+    <script src="assets/js/vendor.min.js"></script>
+    <script src="assets/js/app.js"></script>
 
 </body>
 
