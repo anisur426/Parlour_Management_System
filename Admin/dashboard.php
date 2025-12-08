@@ -82,7 +82,7 @@ if (!isset($_SESSION['email'])) {
                                     </div>
                                     <?php
                                     $query1 = mysqli_query($conn, "SELECT * FROM tbluser");
-                                    $totalUser = mysqli_num_rows($query1);
+                                    $totalUser = mysqli_num_rows($query1);0
                                     ?>
                                     <div class="stats-right">
                                         <label><?php echo $totalUser; ?></label>
@@ -90,13 +90,10 @@ if (!isset($_SESSION['email'])) {
                                     <div class="row d-flex align-items-center mb-4">
                                         <div class="col-8">
                                             <h2 class="d-flex align-items-center mb-0">
-                                                1,15,187
+                                                75
                                             </h2>
                                         </div>
-                                        <div class="col-4 text-end">
-                                            <span class="text-muted">17.8% <i
-                                                    class="mdi mdi-arrow-down text-danger"></i></span>
-                                        </div>
+
                                     </div>
 
                                     <div class="progress shadow-sm" style="height: 5px;">
@@ -116,16 +113,20 @@ if (!isset($_SESSION['email'])) {
                                         <span class="badge badge-soft-primary float-end">Daily</span>
                                         <h3 class="card-title mb-0">Total Appointment</h3>
                                     </div>
+                                    <?php
+                                    $query1 = mysqli_query($conn, "SELECT * FROM tbluser");
+                                    $totalUser = mysqli_num_rows($query1);
+                                    ?>
+                                    <div class="stats-right">
+                                        <label><?php echo $totalUser; ?></label>
+                                    </div>
                                     <div class="row d-flex align-items-center mb-4">
                                         <div class="col-8">
                                             <h2 class="d-flex align-items-center mb-0">
-                                                $1875.54
+                                                250
                                             </h2>
                                         </div>
-                                        <div class="col-4 text-end">
-                                            <span class="text-muted">18.71% <i
-                                                    class="mdi mdi-arrow-down text-danger"></i></span>
-                                        </div>
+
                                     </div>
 
                                     <div class="progress shadow-sm" style="height: 5px;">
@@ -144,16 +145,20 @@ if (!isset($_SESSION['email'])) {
                                         <span class="badge badge-soft-primary float-end">Daily</span>
                                         <h3 class="card-title mb-0">Total Accepted Apt</h3>
                                     </div>
+                                    <?php
+                                    $query1 = mysqli_query($conn, "SELECT * FROM tbluser");
+                                    $totalUser = mysqli_num_rows($query1);
+                                    ?>
+                                    <div class="stats-right">
+                                        <label><?php echo $totalUser; ?></label>
+                                    </div>
                                     <div class="row d-flex align-items-center mb-4">
                                         <div class="col-8">
                                             <h2 class="d-flex align-items-center mb-0">
-                                                $784.62
+                                                140
                                             </h2>
                                         </div>
-                                        <div class="col-4 text-end">
-                                            <span class="text-muted">57% <i
-                                                    class="mdi mdi-arrow-up text-success"></i></span>
-                                        </div>
+
                                     </div>
 
                                     <div class="progress shadow-sm" style="height: 5px;">
@@ -176,13 +181,10 @@ if (!isset($_SESSION['email'])) {
                                     <div class="row d-flex align-items-center mb-4">
                                         <div class="col-8">
                                             <h2 class="d-flex align-items-center mb-0">
-                                                1,15,187
+                                                100
                                             </h2>
                                         </div>
-                                        <div class="col-4 text-end">
-                                            <span class="text-muted">17.8% <i
-                                                    class="mdi mdi-arrow-down text-danger"></i></span>
-                                        </div>
+
                                     </div>
 
                                     <div class="progress shadow-sm" style="height: 5px;">
