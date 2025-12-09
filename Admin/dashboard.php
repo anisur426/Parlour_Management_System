@@ -16,14 +16,14 @@ if (!isset($_SESSION['email'])) {
     <meta content="Myra Studio" name="author" />
 
     <!-- App favicon -->
-    <link rel="shortcut icon" href="dist/assets/images/favicon.ico">
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
 
-    <link href="dist/dist/assets/libs/morris.js/morris.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/morris.js/morris.css" rel="stylesheet" type="text/css" />
 
     <!-- App css -->
-    <link href="dist/assets/css/style.min.css" rel="stylesheet" type="text/css">
-    <link href="dist/assets/css/icons.min.css" rel="stylesheet" type="text/css">
-    <script src="dist/assets/js/config.js"></script>
+    <link href="assets/css/style.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css">
+    <script src="assets/js/config.js"></script>
 </head>
 
 <body>
@@ -82,7 +82,8 @@ if (!isset($_SESSION['email'])) {
                                     </div>
                                     <?php
                                     $query1 = mysqli_query($conn, "SELECT * FROM tbluser");
-                                    $totalUser = mysqli_num_rows($query1);0
+                                    $totalUser = mysqli_num_rows($query1);
+                                    0
                                     ?>
                                     <div class="stats-right">
                                         <label><?php echo $totalUser; ?></label>
@@ -322,21 +323,21 @@ if (!isset($_SESSION['email'])) {
     <!-- END wrapper -->
 
     <!-- App js -->
-    <script src="dist/assets/js/vendor.min.js"></script>
-    <script src="dist/assets/js/app.js"></script>
+    <script src="assets/js/vendor.min.js"></script>
+    <script src="assets/js/app.js"></script>
 
     <!-- Knob charts js -->
-    <script src="dist/assets/libs/jquery-knob/jquery.knob.min.js"></script>
+    <script src="assets/libs/jquery-knob/jquery.knob.min.js"></script>
 
     <!-- Sparkline Js-->
-    <script src="dist/assets/libs/jquery-sparkline/jquery.sparkline.min.js"></script>
+    <script src="assets/libs/jquery-sparkline/jquery.sparkline.min.js"></script>
 
-    <script src="dist/assets/libs/morris.js/morris.min.js"></script>
+    <script src="assets/libs/morris.js/morris.min.js"></script>
 
-    <script src="dist/assets/libs/raphael/raphael.min.js"></script>
+    <script src="assets/libs/raphael/raphael.min.js"></script>
 
     <!-- Dashboard init-->
-    <script src="dist/assets/js/pages/dashboard.js"></script>
+    <script src="assets/js/pages/dashboard.js"></script>
 
 </body>
 

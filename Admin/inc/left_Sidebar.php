@@ -4,14 +4,14 @@
          <div class="logo-box">
              <!-- Brand Logo Light -->
              <a href="index.html" class="logo-light">
-                 <img src="dist/assets/images/logo-light.png" alt="logo" class="logo-lg" height="28">
-                 <img src="dist/assets/images/logo-sm.png" alt="small logo" class="logo-sm" height="28">
+                 <img src="assets/images/logo-light.png" alt="logo" class="logo-lg" height="28">
+                 <img src="assets/images/logo-sm.png" alt="small logo" class="logo-sm" height="28">
              </a>
 
              <!-- Brand Logo Dark -->
              <a href="index.html" class="logo-dark">
-                 <img src="dist/assets/images/logo-dark.png" alt="dark logo" class="logo-lg" height="28">
-                 <img src="dist/assets/images/logo-sm.png" alt="small logo" class="logo-sm" height="28">
+                 <img src="assets/images/logo-dark.png" alt="dark logo" class="logo-lg" height="28">
+                 <img src="assets/images/logo-sm.png" alt="small logo" class="logo-sm" height="28">
              </a>
          </div>
 
@@ -42,12 +42,12 @@
                          <ul class="sub-menu">
 
                              <li class="menu-item">
-                                 <a href="All_Services.php" class="menu-link">
+                                 <a href="all_services.php" class="menu-link">
                                      <span class="menu-text">All Services</span>
                                  </a>
                              </li>
                              <li class="menu-item">
-                                 <a href="Add_Services.php" class="menu-link">
+                                 <a href="add_services.php" class="menu-link">
                                      <span class="menu-text">Add Services</span>
                                  </a>
                              </li>
