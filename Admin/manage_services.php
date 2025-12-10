@@ -1,66 +1,75 @@
+<?php
+include_once('inc/db_config.php');
+
+// ✅ Delete Service
+if (isset($_GET['del'])) {
+    $id = $_GET['del'];
+    mysqli_query($conn, "DELETE FROM tblservices WHERE ID='$id'");
+    header("location:manage_services.php");
+}
+?>
+
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="light" data-menu-color="brand" data-topbar-color="light">
+<html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <title>Log In | Dashtrap - Responsive Bootstrap 5 Admin Dashboard</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
-    <meta content="Myra Studio" name="author" />
-
-    <!-- App favicon -->
-    <link rel="shortcut icon" href="assets/images/favicon.ico">
-
-    <!-- App css -->
-    <link href="assets/css/style.min.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css">
-    <script src="assets/js/config.js"></script>
+    <meta charset="utf-8">
+    <title>Manage Services</title>
+    <link href="assets/css/style.min.css" rel="stylesheet">
 </head>
 
-<body class="bg-primary d-flex justify-content-center align-items-center min-vh-100 p-5">
- <div id ="page-wapper">
+<body>
+
     <div class="main-page">
         <div class="tables">
             <h3 class="title1">Manage Services</h3>
-            <div class="table-responsiv bs-example widget-shadow">
+
+            <div class="table-responsive widget-shadow">
                 <h4>Update Services:</h4>
+
                 <table class="table table-bordered">
-                    
+                    <tr>
+                        <th>SL No.</th>
+                        <th>Service Name</th>
+                        <th>Service Price</th>
+                        <th>Creation Date</th>
+                        <th>Action</th>
+                    </tr>
+
+                    <?php
+                    $query = mysqli_query($conn, "SELECT * FROM tblservices");
+                    $sl = 1;
+
+                    while ($row = mysqli_fetch_array($query)) {
+                    ?>
                         <tr>
-                            <th>SL No.</th>
-                            <th>Service Name</th>
-                            <th>Service Price</th>
-                            <th>Creation date</th>
-                            <th>Action</th>
+                            <td><?php echo $sl; ?></td>
+                            <td><?php echo $row['ServiceName']; ?></td>
+                            <td><?php echo $row['Cost']; ?></td>
+                            <td><?php echo $row['CreationDate']; ?></td>
+                            <td>
+                                <!-- ✅ Edit Button -->
+                                <a href="edit_service.php?id=<?php echo $row['ID']; ?>"
+                                    class="btn btn-sm btn-primary">
+                                    Edit
+                                </a>
+
+                                <!-- ✅ Delete Button -->
+                                <a href="manage_services.php?del=<?php echo $row['ID']; ?>"
+                                    class="btn btn-sm btn-danger"
+                                    onclick="return confirm('delete this service?');">
+                                    Delete
+                                </a>
+                            </td>
                         </tr>
-                        <?php
-                        $sql = mysqli_query($conn,"SELECT * FROM tblservices");
-                      $conn=1;
-                      while($row=mysqli_fetch_array($ret)){
-                        
-
-                      }
-                        ?>
-                        <tr>
-                            <th scope="row"><?php echo $conn;?></th>
-                            <td><?php echo $row ['ServiceName']; ?></td>
-                            <td><?php echo $row['Cost'] ;?></td>
-                            <td><?php echo $row ['CreationDate'] ;?></td>
-                            <td><a href="edit_.php"><?php  ?></a></td>
-                            <td></td>
-
-                        </tr>
-                   
-
+                    <?php
+                        $sl++;
+                    }
+                    ?>
                 </table>
             </div>
         </div>
     </div>
- </div>
-
-    <!-- App js -->
-    <script src="assets/js/vendor.min.js"></script>
-    <script src="assets/js/app.js"></script>
 
 </body>
 

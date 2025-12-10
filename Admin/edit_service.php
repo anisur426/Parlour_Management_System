@@ -106,7 +106,7 @@
 
                         <!-- ✅ Button class change -->
                         <button type="submit" name="submit" class="btn-add">
-                            Add Service
+                            Update Service
                         </button>
 
                     </form>
@@ -115,33 +115,42 @@
 
             </div>
             <?php
+            $id = $_GET['id'];
+            echo $id;
+            $sql = "SELECT * FROM "
+            ?>
+
+            <?php
             if (isset($_POST['submit'])) {
 
                 $sername = $_POST['sername'];
                 $serdesc = $_POST['serdesc'];
                 $cost    = $_POST['cost'];
 
-                // Image Upload
                 $image_name = $_FILES['image']['name'];
                 $temp_name  = $_FILES['image']['tmp_name'];
                 $folder     = "uploads/" . $image_name;
 
                 move_uploaded_file($temp_name, $folder);
 
-                // Insert Query
                 $sql = "INSERT INTO tblservices 
             (ServiceName, ServiceDescription, Cost, Image, CreationDate)
             VALUES 
             ('$sername', '$serdesc', '$cost', '$image_name', NOW())";
 
                 if ($conn->query($sql)) {
-                    echo "<div class='alert alert-success'>Service Added Successfully</div>";
+
+                    $_SESSION['msg'] = "✅ Service Successfully Added!";
+                    header("Location: add_services.php");
+                    exit;
                 } else {
-                    echo "<div class='alert alert-danger'>Service Add Failed</div>";
+                    $_SESSION['msg'] = "❌ Service Add Failed!";
+                    header("Location: add_services.php");
+                    exit;
                 }
             }
-            ?>
 
+            ?>
 
 
             <!-- Footer Start -->

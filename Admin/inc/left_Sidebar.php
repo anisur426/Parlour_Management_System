@@ -51,15 +51,30 @@
                                      <span class="menu-text">Manage Services</span>
                                  </a>
                              </li>
-                            </ul>
+                         </ul>
                      </div>
                  </li>
-                   <li class="menu-item">
+                 <li class="menu-item">
                      <a href="forms-elements.php" data-bs-toggle="collapse" class="menu-link waves-effect waves-light">
                          <span class="menu-icon"><i class="bx bxs-eraser"></i></span>
-                         <span class="menu-text"> Forms </span>
+                         <span class="menu-text"> pages </span>
                          <span class="menu-arrow"></span>
                      </a>
+                     <div class="collapse" id="menuExpages">
+                         <ul class="sub-menu">
+
+                             <li class="menu-item">
+                                 <a href="about_us.php" class="menu-link">
+                                     <span class="menu-text">Update About Us</span>
+                                 </a>
+                             </li>
+                             <li class="menu-item">
+                                 <a href="manage_services.php" class="menu-link">
+                                     <span class="menu-text">Manage Services</span>
+                                 </a>
+                             </li>
+                         </ul>
+                     </div>
 
                  </li>
 
