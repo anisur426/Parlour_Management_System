@@ -42,33 +42,20 @@
                          <ul class="sub-menu">
 
                              <li class="menu-item">
-                                 <a href="all_services.php" class="menu-link">
-                                     <span class="menu-text">All Services</span>
-                                 </a>
-                             </li>
-                             <li class="menu-item">
                                  <a href="add_services.php" class="menu-link">
                                      <span class="menu-text">Add Services</span>
                                  </a>
                              </li>
                              <li class="menu-item">
-                                 <a href="pages-register.html" class="menu-link">
+                                 <a href="manage_services.php" class="menu-link">
                                      <span class="menu-text">Manage Services</span>
                                  </a>
                              </li>
-
-
-                         </ul>
+                            </ul>
                      </div>
                  </li>
-
-
-
-
-
-
-                 <li class="menu-item">
-                     <a href="#menuForms" data-bs-toggle="collapse" class="menu-link waves-effect waves-light">
+                   <li class="menu-item">
+                     <a href="forms-elements.php" data-bs-toggle="collapse" class="menu-link waves-effect waves-light">
                          <span class="menu-icon"><i class="bx bxs-eraser"></i></span>
                          <span class="menu-text"> Forms </span>
                          <span class="menu-arrow"></span>

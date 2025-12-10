@@ -72,7 +72,7 @@ session_start();
 
                     extract($_POST);
                     $password = md5($password);
-                    $sql = "SELECT * FROM admin WHERE email='$email' AND password='$password'";
+                    $sql = "SELECT * FROM tbladmin WHERE email='$email' AND password='$password'";
                     $rawdata = $conn->query($sql);
                     $row  = $rawdata->fetch_assoc();
                     //ech $rawdata->num_rows;
