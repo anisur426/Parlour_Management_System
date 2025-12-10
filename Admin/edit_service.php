@@ -1,4 +1,6 @@
-<?php include_once('inc/db_config.php'); ?>
+<?php include_once('inc/db_config.php'); 
+session_start ();
+ ?>
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light" data-menu-color="brand" data-topbar-color="light">
 
@@ -115,42 +117,37 @@
 
             </div>
             <?php
-            $id = $_GET['id'];
-            echo $id;
-            $sql = "SELECT * FROM "
-            ?>
+if (isset($_POST['submit'])) {
 
-            <?php
-            if (isset($_POST['submit'])) {
+    $id      = $_GET['id'];   // id URL থেকে
+    $sername = $_POST['sername'];
+    $serdesc = $_POST['serdesc'];
+    $cost    = $_POST['cost'];
 
-                $sername = $_POST['sername'];
-                $serdesc = $_POST['serdesc'];
-                $cost    = $_POST['cost'];
+    $image_name = $_FILES['image']['name'];
+    $temp_name  = $_FILES['image']['tmp_name'];
+    $folder     = "uploads/" . $image_name;
 
-                $image_name = $_FILES['image']['name'];
-                $temp_name  = $_FILES['image']['tmp_name'];
-                $folder     = "uploads/" . $image_name;
+    move_uploaded_file($temp_name, $folder);
 
-                move_uploaded_file($temp_name, $folder);
+    $sql = "UPDATE tblservices SET 
+                ServiceName='$sername',
+                ServiceDescription='$serdesc',
+                Cost='$cost',
+                Image='$image_name'
+            WHERE id='$id'";
 
-                $sql = "INSERT INTO tblservices 
-            (ServiceName, ServiceDescription, Cost, Image, CreationDate)
-            VALUES 
-            ('$sername', '$serdesc', '$cost', '$image_name', NOW())";
-
-                if ($conn->query($sql)) {
-
-                    $_SESSION['msg'] = "✅ Service Successfully Added!";
-                    header("Location: add_services.php");
-                    exit;
-                } else {
-                    $_SESSION['msg'] = "❌ Service Add Failed!";
-                    header("Location: add_services.php");
-                    exit;
-                }
-            }
-
-            ?>
+    if ($conn->query($sql)) {
+        $_SESSION['msg'] = "✅ Service Successfully Updated!";
+        header("Location: add_services.php");
+        exit;
+    } else {
+        $_SESSION['msg'] = "❌ Service Update Failed!";
+        header("Location: add_services.php");
+        exit;
+    }
+}
+?>
 
 
             <!-- Footer Start -->

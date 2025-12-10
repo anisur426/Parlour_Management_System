@@ -55,41 +55,50 @@
                      </div>
                  </li>
                  <li class="menu-item">
-                     <a href="forms-elements.php" data-bs-toggle="collapse" class="menu-link waves-effect waves-light">
-                         <span class="menu-icon"><i class="bx bxs-eraser"></i></span>
-                         <span class="menu-text"> pages </span>
-                         <span class="menu-arrow"></span>
-                     </a>
-                     <div class="collapse" id="menuExpages">
-                         <ul class="sub-menu">
+    <a href="#menuExpages" 
+       data-bs-toggle="collapse" 
+       role="button"
+       aria-expanded="false"
+       class="menu-link waves-effect waves-light">
 
-                             <li class="menu-item">
-                                 <a href="about_us.php" class="menu-link">
-                                     <span class="menu-text">Update About Us</span>
-                                 </a>
-                             </li>
-                             <li class="menu-item">
-                                 <a href="manage_services.php" class="menu-link">
-                                     <span class="menu-text">Manage Services</span>
-                                 </a>
-                             </li>
-                         </ul>
-                     </div>
+        <span class="menu-icon"><i class="bx bxs-eraser"></i></span>
+        <span class="menu-text"> Pages </span>
+        <span class="menu-arrow"></span>
+    </a>
 
-                 </li>
+    <div class="collapse" id="menuExpages">
+        <ul class="sub-menu">
+
+            <li class="menu-item">
+                <a href="about_us.php" class="menu-link">
+                    <span class="menu-text">Update About Us</span>
+                </a>
+            </li>
+
+            <li class="menu-item">
+                <a href="contact_us.php" class="menu-link">
+                    <span class="menu-text">Contact Us</span>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+</li>
+
+                
 
                  <li class="menu-item">
                      <a href="#menuTables" data-bs-toggle="collapse" class="menu-link waves-effect waves-light">
                          <span class="menu-icon"><i class="bx bx-table"></i></span>
-                         <span class="menu-text"> Tables </span>
+                         <span class="menu-text"> Appointment </span>
                          <span class="menu-arrow"></span>
                      </a>
                      <div class="collapse" id="menuTables">
                          <ul class="sub-menu">
 
                              <li class="menu-item">
-                                 <a href="tables-datatables.php" class="menu-link">
-                                     <span class="menu-text">Data Tables</span>
+                                 <a href="all_appointment.php" class="menu-link">
+                                     <span class="menu-text">All Appointment</span>
                                  </a>
                              </li>
                          </ul>
