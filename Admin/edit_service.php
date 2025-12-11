@@ -1,6 +1,6 @@
-<?php include_once('inc/db_config.php'); 
-session_start ();
- ?>
+<?php include_once('inc/db_config.php');
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light" data-menu-color="brand" data-topbar-color="light">
 
@@ -60,6 +60,26 @@ session_start ();
     </style>
 </head>
 
+<?php
+include_once('inc/db_config.php');
+
+$id = $_GET['id'];   // URL থেকে id নেওয়া
+
+// id অনুযায়ী ডাটা আনার কুয়েরি
+$sql = "SELECT * FROM `tblservices` WHERE `ID` = '$id'";
+
+$result = mysqli_query($conn, $sql);
+
+// ডাটা পাওয়া গেছে কিনা চেক করা
+if ($result && mysqli_num_rows($result) > 0) {
+    $row = mysqli_fetch_assoc($result);   // ডাটা এক লাইনে
+} else {
+    echo "No data found!";
+    exit;
+}
+?>
+
+
 <body>
 
     <!-- Begin page -->
@@ -88,25 +108,34 @@ session_start ();
 
                         <div class="form-group">
                             <label>Service Name</label>
-                            <input type="text" class="form-control" name="sername" required>
+                            <input type="text" class="form-control"
+                                name="sername"
+                                value="<?= $row['ServiceName']; ?>"
+                                required>
                         </div>
 
                         <div class="form-group">
                             <label>Service Description</label>
-                            <textarea class="form-control" name="serdesc" rows="3" required></textarea>
+                            <textarea class="form-control" name="serdesc" rows="3" required><?= $row['ServiceDescription']; ?></textarea>
                         </div>
 
                         <div class="form-group">
                             <label>Cost</label>
-                            <input type="text" class="form-control" name="cost" required>
+                            <input type="text" class="form-control"
+                                name="cost"
+                                value="<?= $row['Cost']; ?>"
+                                required>
                         </div>
 
                         <div class="form-group">
                             <label>Image</label>
-                            <input type="file" class="form-control" name="image" required>
+                            <input type="file" class="form-control" name="image">
+
+                            <!-- পুরনো ইমেজ দেখাতে চাইলে -->
+                            <br>
+                            <img src="uploads/<?= $row['Image']; ?>" width="120">
                         </div>
 
-                        <!-- ✅ Button class change -->
                         <button type="submit" name="submit" class="btn-add">
                             Update Service
                         </button>
@@ -117,37 +146,37 @@ session_start ();
 
             </div>
             <?php
-if (isset($_POST['submit'])) {
+            if (isset($_POST['submit'])) {
 
-    $id      = $_GET['id'];   // id URL থেকে
-    $sername = $_POST['sername'];
-    $serdesc = $_POST['serdesc'];
-    $cost    = $_POST['cost'];
+                $id      = $_GET['id'];   // id URL থেকে
+                $sername = $_POST['sername'];
+                $serdesc = $_POST['serdesc'];
+                $cost    = $_POST['cost'];
 
-    $image_name = $_FILES['image']['name'];
-    $temp_name  = $_FILES['image']['tmp_name'];
-    $folder     = "uploads/" . $image_name;
+                $image_name = $_FILES['image']['name'];
+                $temp_name  = $_FILES['image']['tmp_name'];
+                $folder     = "uploads/" . $image_name;
 
-    move_uploaded_file($temp_name, $folder);
+                move_uploaded_file($temp_name, $folder);
 
-    $sql = "UPDATE tblservices SET 
+                $sql = "UPDATE tblservices SET 
                 ServiceName='$sername',
                 ServiceDescription='$serdesc',
                 Cost='$cost',
                 Image='$image_name'
             WHERE id='$id'";
 
-    if ($conn->query($sql)) {
-        $_SESSION['msg'] = "✅ Service Successfully Updated!";
-        header("Location: add_services.php");
-        exit;
-    } else {
-        $_SESSION['msg'] = "❌ Service Update Failed!";
-        header("Location: add_services.php");
-        exit;
-    }
-}
-?>
+                if ($conn->query($sql)) {
+                    $_SESSION['msg'] = "✅ Service Successfully Updated!";
+                    header("Location: manage_services.php");
+                    exit;
+                } else {
+                    $_SESSION['msg'] = "❌ Service Update Failed!";
+                    // header("Location: add_services.php");
+                    exit;
+                }
+            }
+            ?>
 
 
             <!-- Footer Start -->
