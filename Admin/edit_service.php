@@ -119,7 +119,7 @@ session_start ();
             <?php
 if (isset($_POST['submit'])) {
 
-    $id      = $_GET['id'];   // id URL থেকে
+    $id      = $_GET['id'];  
     $sername = $_POST['sername'];
     $serdesc = $_POST['serdesc'];
     $cost    = $_POST['cost'];

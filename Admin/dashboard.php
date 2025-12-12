@@ -71,7 +71,7 @@ if (!isset($_SESSION['email'])) {
 
 
                     <div class="row">
-                        <div class="col-md-6 col-xl-3">
+                        <div class="col-md-6 col-xl-4">
                             <div class="card">
                                 <div class="card-body">
 
@@ -107,7 +107,7 @@ if (!isset($_SESSION['email'])) {
                             </div><!-- end card-->
                         </div> <!-- end col-->
 
-                        <div class="col-md-6 col-xl-3">
+                        <div class="col-md-6 col-xl-4">
                             <div class="card">
                                 <div class="card-body">
                                     <div class="mb-4">
@@ -139,7 +139,7 @@ if (!isset($_SESSION['email'])) {
                             </div><!-- end card-->
                         </div> <!-- end col-->
 
-                        <div class="col-md-6 col-xl-3">
+                        <div class="col-md-6 col-xl-4">
                             <div class="card">
                                 <div class="card-body">
                                     <div class="mb-4">
@@ -172,7 +172,7 @@ if (!isset($_SESSION['email'])) {
                             <!--end card-->
                         </div> <!-- end col-->
 
-                        <div class="col-md-6 col-xl-3">
+                        <div class="col-md-6 col-xl-4">
                             <div class="card">
                                 <div class="card-body">
                                     <div class="mb-4">
@@ -196,7 +196,7 @@ if (!isset($_SESSION['email'])) {
                             </div><!-- end card-->
                         </div> <!-- end col-->
 
-                        <div class="col-md-6 col-xl-3">
+                        <div class="col-md-6 col-xl-4">
                             <div class="card">
                                 <div class="card-body">
                                     <div class="mb-4">
@@ -222,7 +222,7 @@ if (!isset($_SESSION['email'])) {
                                 <!--end card body-->
                             </div><!-- end card-->
                         </div> <!-- end col-->
-                        <div class="col-md-6 col-xl-3">
+                        <div class="col-md-6 col-xl-4">
                             <div class="card">
                                 <div class="card-body">
                                     <div class="mb-4">
@@ -248,7 +248,7 @@ if (!isset($_SESSION['email'])) {
                                 <!--end card body-->
                             </div><!-- end card-->
                         </div> <!-- end col-->
-                        <div class="col-md-6 col-xl-3">
+                        <div class="col-md-6 col-xl-4">
                             <div class="card">
                                 <div class="card-body">
                                     <div class="mb-4">
@@ -275,7 +275,7 @@ if (!isset($_SESSION['email'])) {
                                 <!--end card body-->
                             </div><!-- end card-->
                         </div> <!-- end col-->
-                        <div class="col-md-6 col-xl-3">
+                        <div class="col-md-6 col-xl-4">
                             <div class="card">
                                 <div class="card-body">
                                     <div class="mb-4">
@@ -302,6 +302,34 @@ if (!isset($_SESSION['email'])) {
                                 <!--end card body-->
                             </div><!-- end card-->
                         </div> <!-- end col-->
+                         <div class="col-md-6 col-xl-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="mb-4">
+                                        <span class="badge badge-soft-primary float-end">Daily</span>
+                                        <h3 class="card-title mb-0">Total Services</h3>
+                                    </div>
+                                    <div class="row d-flex align-items-center mb-4">
+                                        <div class="col-8">
+                                            <h2 class="d-flex align-items-center mb-0">
+                                                $1875.54
+                                            </h2>
+                                        </div>
+                                        <div class="col-4 text-end">
+                                            <span class="text-muted">18.71% <i
+                                                    class="mdi mdi-arrow-down text-danger"></i></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="progress shadow-sm" style="height: 5px;">
+                                        <div class="progress-bar bg-danger" role="progressbar" style="width: 57%;">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end card body-->
+                            </div><!-- end card-->
+                        </div> <!-- end col-->
+
 
                     </div>
 
