@@ -68,28 +68,36 @@ session_start();
                 </div>
 
                 <?php
+                session_start();
+
                 if (isset($_POST['login'])) {
 
-                    extract($_POST);
-                    $password = md5($password);
-                    $sql = "SELECT * FROM tbladmin WHERE email='$email' AND password='$password'";
-                    $rawdata = $conn->query($sql);
-                    $row  = $rawdata->fetch_assoc();
-                    //ech $rawdata->num_rows;
-                    if ($rawdata->num_rows) {
+                    $email    = trim($_POST['email']);
+                    $password = md5($_POST['password']);
 
+                    $sql = "SELECT * FROM tbladmin WHERE email = ? AND password = ?";
+                    $stmt = $conn->prepare($sql);
+                    $stmt->bind_param("ss", $email, $password);
+                    $stmt->execute();
 
+                    $result = $stmt->get_result();
 
-                        $_SESSION['email'] = $email;
-                        $_SESSION['name'] = $row['name'];
+                    if ($result->num_rows === 1) {
 
+                        $row = $result->fetch_assoc();
 
-                        header("Location:dashboard.php");
+                        $_SESSION['admin_id'] = $row['ID'];   // adjust if column name differs
+                        $_SESSION['name']     = $row['AdminName'];
+                        $_SESSION['email']    = $row['Email'];
+
+                        header("Location: dashboard.php");
+                        exit();
                     } else {
-                        echo '<div class="alert alert-danger">invalid your email</div>';
+                        echo '<div class="alert alert-danger">Invalid email or password</div>';
                     }
                 }
                 ?>
+
                 <div class="row mt-3">
                     <div class="col-12 text-center">
                         <p class="text-white-50"> <a href="pages-register.html" class="text-white-50 ms-1">Forgot your password?</a></p>
