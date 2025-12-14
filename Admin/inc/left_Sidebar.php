@@ -103,11 +103,89 @@
                              </li>
                          </ul>
                      </div>
+                       <div class="collapse" id="menuTables">
+                         <ul class="sub-menu">
+
+                             <li class="menu-item">
+                                 <a href="all_appointment.php" class="menu-link">
+                                     <span class="menu-text">New Appointment</span>
+                                 </a>
+                             </li>
+                         </ul>
+                     </div>
+                       <div class="collapse" id="menuTables">
+                         <ul class="sub-menu">
+
+                             <li class="menu-item">
+                                 <a href="all_appointment.php" class="menu-link">
+                                     <span class="menu-text">Accepted Appointment</span>
+                                 </a>
+                             </li>
+                         </ul>
+                     </div>
+                       <div class="collapse" id="menuTables">
+                         <ul class="sub-menu">
+
+                             <li class="menu-item">
+                                 <a href="all_appointment.php" class="menu-link">
+                                     <span class="menu-text">Rejected Appointment</span>
+                                 </a>
+                             </li>
+                         </ul>
+                     </div>
                  </li>
-
-
-
-
+                 <li class="menu-item">
+                        <a href="#menuCharts" data-bs-toggle="collapse" class="menu-link waves-effect waves-light">
+                            <span class="menu-icon"><i class="bx bx-doughnut-chart"></i></span>
+                            <span class="menu-text">Enquiry</span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <div class="collapse" id="menuCharts">
+                            <ul class="sub-menu">
+                                <li class="menu-item">
+                                    <a href="charts-apex.html" class="menu-link">
+                                        <span class="menu-text"> Read Enquiry</span>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="charts-morris.html" class="menu-link">
+                                        <span class="menu-text"> Unread Enquiry</span>
+                                    </a>
+                                </li>
+                               
+                            </ul>
+                        </div>
+                    </li>
+                     <li class="menu-item">
+                        <a href="#menuMaps" data-bs-toggle="collapse" class="menu-link waves-effect waves-light">
+                            <span class="menu-icon"><i class="bx bx-map-alt"></i></span>
+                            <span class="menu-text"> Customer List</span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        
+                    </li>
+                      <li class="menu-item">
+                        <a href="#menuMaps" data-bs-toggle="collapse" class="menu-link waves-effect waves-light">
+                            <span class="menu-icon"><i class="bx bx-map-alt"></i></span>
+                            <span class="menu-text"> Reports</span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <div class="collapse" id="menuMaps">
+                            <ul class="sub-menu">
+                                <li class="menu-item">
+                                    <a href="maps-google.html" class="menu-link">
+                                        <span class="menu-text">Between dates reports</span>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="maps-vector.html" class="menu-link">
+                                        <span class="menu-text">Sales reports</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                      
 
              </ul>
          </div>
