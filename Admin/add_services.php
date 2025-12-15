@@ -1,161 +1,166 @@
-<?php include_once('inc/db_config.php'); ?>
+<?php
+include_once('inc/db_config.php');
+
+$message = '';
+$messageType = '';
+
+if (isset($_POST['submit'])) {
+
+    $sername = trim($_POST['sername']);
+    $serdesc = trim($_POST['serdesc']);
+    $cost    = trim($_POST['cost']);
+
+    /* ===== IMAGE UPLOAD ===== */
+    $image_name = $_FILES['image']['name'];
+    $temp_name  = $_FILES['image']['tmp_name'];
+    $ext        = strtolower(pathinfo($image_name, PATHINFO_EXTENSION));
+    $allowed    = ['jpg', 'jpeg', 'png', 'webp'];
+
+    if (!in_array($ext, $allowed)) {
+
+        $message = "Invalid image format";
+        $messageType = "danger";
+    } else {
+
+        $newImage = uniqid('service_', true) . '.' . $ext;
+        $folder   = "uploads/" . $newImage;
+
+        if (move_uploaded_file($temp_name, $folder)) {
+
+            $sql = "INSERT INTO tblservices
+                    (ServiceName, ServiceDescription, Cost, Image, CreationDate)
+                    VALUES (?, ?, ?, ?, NOW())";
+
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("ssds", $sername, $serdesc, $cost, $newImage);
+
+            if ($stmt->execute()) {
+                header("Location: manage_services.php?added=1");
+                exit();
+            } else {
+                $message = "Database error";
+                $messageType = "danger";
+            }
+        } else {
+            $message = "Image upload failed";
+            $messageType = "danger";
+        }
+    }
+}
+?>
+
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="light" data-menu-color="brand" data-topbar-color="light">
+<html lang="en" data-menu-color="brand" data-topbar-color="light">
 
 <head>
     <meta charset="utf-8" />
-    <title>Invoice | Dashtrap - Responsive Bootstrap 5 Admin Dashboard</title>
+    <title>Add Service</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
-    <meta content="Myra Studio" name="author" />
 
-    <!-- App favicon -->
     <link rel="shortcut icon" href="assets/images/favicon.ico">
-
-    <!-- App css -->
-    <link href="assets/css/style.min.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/style.min.css" rel="stylesheet">
+    <link href="assets/css/icons.min.css" rel="stylesheet">
     <script src="assets/js/config.js"></script>
+
     <style>
-        .service-wrapper {
-            display: flex;
-            justify-content: center;
-            margin-top: 40px;
-            color: #ff4d79;
+        .page-wrapper {
+            padding: 1.25rem;
         }
 
-        .service-box {
-            width: 780px;
-            background: #ffffff;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        .service-card {
+            max-width: 760px;
+            margin: auto;
         }
 
-        .form-title h4 {
-            text-align: center;
-            margin-bottom: 20px;
-            font-weight: 600;
-            color: #e63b65;
+        .service-card .card-body {
+            padding: 1.5rem;
         }
 
-        /* Button Design */
-        .btn-add {
-            width: 20%;
-            background-color: #ff4d79;
-            /* pink */
-            color: #fff;
-            border: none;
-            padding: 10px;
-            border-radius: 6px;
-            font-size: 16px;
-            cursor: pointer;
+        .service-card .form-label {
+            margin-bottom: 0.25rem;
+            font-weight: 500;
         }
 
-        .btn-add:hover {
-            background-color: #e63b65;
+        .service-card .form-control {
+            padding: 0.45rem 0.6rem;
+        }
+
+        .service-card .mb-3 {
+            margin-bottom: 0.75rem !important;
+        }
+
+        .btn-submit {
+            min-width: 160px;
         }
     </style>
 </head>
 
 <body>
 
-    <!-- Begin page -->
     <div class="layout-wrapper">
 
-        <!-- ========== Left Sidebar ========== -->
         <?php include('inc/left_Sidebar.php'); ?>
 
-
-        <!-- Start Page Content here -->
         <div class="page-content">
 
-            <!-- ========== Topbar Start ========== -->
             <?php include('inc/topbar.php'); ?>
-            <!-- ========== Topbar End ========== -->
 
-            <div class="container-fluid service-wrapper">
+            <div class="container-fluid page-wrapper">
 
-                <div class="service-box">
-
-                    <div class="form-title">
-                        <h4>Parlour Services</h4>
+                <div class="card service-card">
+                    <div class="card-header">
+                        <h5 class="mb-0">Add Parlour Service</h5>
                     </div>
 
-                    <form method="post" enctype="multipart/form-data">
+                    <div class="card-body">
 
-                        <div class="form-group">
-                            <label>Service Name</label>
-                            <input type="text" class="form-control" name="sername" required>
-                        </div>
+                        <?php if ($message): ?>
+                            <div class="alert alert-<?= $messageType ?> py-2">
+                                <?= htmlspecialchars($message) ?>
+                            </div>
+                        <?php endif; ?>
 
-                        <div class="form-group">
-                            <label>Service Description</label>
-                            <textarea class="form-control" name="serdesc" rows="3" required></textarea>
-                        </div>
+                        <form method="post" enctype="multipart/form-data">
 
-                        <div class="form-group">
-                            <label>Cost</label>
-                            <input type="text" class="form-control" name="cost" required>
-                        </div>
+                            <div class="mb-3">
+                                <label class="form-label">Service Name</label>
+                                <input type="text" name="sername" class="form-control" required>
+                            </div>
 
-                        <div class="form-group">
-                            <label>Image</label>
-                            <input type="file" class="form-control" name="image" required>
-                        </div>
+                            <div class="mb-3">
+                                <label class="form-label">Service Description</label>
+                                <textarea name="serdesc" rows="3" class="form-control" required></textarea>
+                            </div>
 
-                        <!-- ✅ Button class change -->
-                        <button type="submit" name="submit" class="btn-add">
-                            Add Service
-                        </button>
+                            <div class="mb-3">
+                                <label class="form-label">Cost</label>
+                                <input type="number" step="0.01" name="cost" class="form-control" required>
+                            </div>
 
-                    </form>
+                            <div class="mb-3">
+                                <label class="form-label">Service Image</label>
+                                <input type="file" name="image" class="form-control" accept="image/*" required>
+                            </div>
 
+                            <div class="mt-3">
+                                <button type="submit" name="submit" class="btn btn-primary btn-submit">
+                                    Add Service
+                                </button>
+                            </div>
+
+                        </form>
+
+                    </div>
                 </div>
 
             </div>
-            <?php
-            if (isset($_POST['submit'])) {
 
-                $sername = $_POST['sername'];
-                $serdesc = $_POST['serdesc'];
-                $cost    = $_POST['cost'];
-
-                // Image Upload
-                $image_name = $_FILES['image']['name'];
-                $temp_name  = $_FILES['image']['tmp_name'];
-                $folder     = "uploads/" . $image_name;
-
-                move_uploaded_file($temp_name, $folder);
-
-                // Insert Query
-                $sql = "INSERT INTO tblservices 
-            (ServiceName, ServiceDescription, Cost, Image, CreationDate)
-            VALUES 
-            ('$sername', '$serdesc', '$cost', '$image_name', NOW())";
-
-                if ($conn->query($sql)) {
-                    echo "<div class='alert alert-success'>Service Added Successfully</div>";
-                } else {
-                    echo "<div class='alert alert-danger'>Service Add Failed</div>";
-                }
-            }
-            ?>
-
-
-
-            <!-- Footer Start -->
             <?php include('inc/footer.php'); ?>
-            <!-- end Footer -->
 
         </div>
-        <!-- End Page content -->
-
 
     </div>
-    <!-- END wrapper -->
 
-    <!-- App js -->
     <script src="assets/js/vendor.min.js"></script>
     <script src="assets/js/app.js"></script>
 
