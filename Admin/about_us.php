@@ -1,9 +1,10 @@
 <?php include("inc/db_config.php"); ?>
-    <?php
- 
-                                                         $query = mysqli_query($conn, "SELECT * FROM tblpage WHERE PageType='aboutus'");
-                                                          $row = mysqli_fetch_assoc($query);
-                                                         ?>
+<?php
+
+$query = mysqli_query($conn, "SELECT * FROM  tblpage  WHERE PageType='aboutus'");
+$row = mysqli_fetch_assoc($query);
+
+?>
 
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light" data-menu-color="brand" data-topbar-color="light">
@@ -23,14 +24,14 @@
     <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css">
     <script src="assets/js/config.js"></script>
     <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
-<script>
-tinymce.init({
-  selector: '#example-textarea',
-  menubar: false,
-  plugins: 'lists link image table code',
-  toolbar: 'undo redo | bold italic underline | alignleft aligncenter alignright | bullist numlist | link image | code'
-});
-</script>
+    <script>
+        tinymce.init({
+            selector: '#example-textarea',
+            menubar: false,
+            plugins: 'lists link image table code',
+            toolbar: 'undo redo | bold italic underline | alignleft aligncenter alignright | bullist numlist | link image | code'
+        });
+    </script>
 
 </head>
 
@@ -83,29 +84,35 @@ tinymce.init({
                                     <div class="row">
                                         <div class="col-12">
                                             <div class="p-2">
-                                              
-                                               <form class="form-horizontal" role="form" method="post" action="update_about.php">
+
+                                                <form class="form-horizontal" role="form" method="post" action="update_about.php">
 
                                                     <div class="mb-2 row">
                                                         <label class="col-md-2 col-form-label" for="simpleinput">Page Title</label>
                                                         <div class="col-md-10">
-                                                            <input type="text" id="simpleinput" class="form-control" value="about as...">
+                                                            <input type="text"
+                                                                id="simpleinput"
+                                                                class="form-control"
+                                                                name="pagetitle"
+                                                                value="<?php echo $row['PageTitle']; ?>">
+
                                                         </div>
-                                                      
+
 
                                                     </div>
 
                                                     <div class="mb-2 row">
                                                         <label class="col-md-2 col-form-label" for="example-textarea">Page Description</label>
                                                         <div class="col-md-10">
-                                                           <textarea class="form-control" id="example-textarea" name="pagedes" rows="5"></textarea>
+                                                            <textarea class="form-control" id="example-textarea" name="pagedes" rows="5">
+                                                                <?php echo $row['PageDescription']; ?></textarea>
 
 
-                    <div class="col-auto">
-                     <button type="submit" class="btn btn-primary mt-2">Update</button>
-                    </div>
- 
-                                                    </div>
+                                                            <div class="col-auto">
+                                                                <button type="submit" class="btn btn-primary mt-2">Update</button>
+                                                            </div>
+
+                                                        </div>
 
 
                                                 </form>
