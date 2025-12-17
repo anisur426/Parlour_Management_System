@@ -28,7 +28,10 @@
             <!-- Services -->
             <li class="menu-item">
                 <a href="#menuServices" data-bs-toggle="collapse" class="menu-link waves-effect waves-light">
-                    <span class="menu-icon"><i class="bx bx-briefcase"></i></span>
+  <span class="menu-icon">
+    <i class="bx bx-face"></i>
+
+</span>
                     <span class="menu-text">Services</span>
                     <span class="menu-arrow"></span>
                 </a>
@@ -134,6 +137,14 @@
                     <span class="menu-text">Customers</span>
                 </a>
             </li>
+             <!-- Invoice -->
+            <li class="menu-item">
+                <a href="customers.php" class="menu-link waves-effect waves-light">
+                    <span class="menu-icon"><i class="fa fa-file-invoice-dollar"></i></span>
+                    <span class="menu-text">Invoice</span>
+                </a>
+            </li>
+
 
             <!-- Reports -->
             <li class="menu-item">
@@ -157,6 +168,21 @@
                     </ul>
                 </div>
             </li>
+               <!-- Appointment -->
+            <li class="menu-item">
+                <a href="customers.php" class="menu-link waves-effect waves-light">
+                    <span class="menu-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+                    <span class="menu-text">Appointment</span>
+                </a>
+            </li>
+                  <!-- Logout -->
+            <li class="menu-item">
+                <a href="customers.php" class="menu-link waves-effect waves-light">
+                    <span class="menu-icon"><i class="bx bx-log-out"></i></span>
+                    <span class="menu-text">Logout</span>
+                </a>
+            </li>
+
 
         </ul>
     </div>
