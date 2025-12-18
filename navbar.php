@@ -1,8 +1,9 @@
-<div class="header-navbar d-none d-lg-block">
+   <div class="header-navbar d-none d-lg-block">
                         <ul class="navbar-menu">
-                            <li><a href="index.html">Home</a></li>
+                            <li><a href="index.php">Home</a></li>
                             <li>
-                                <a href="services.php">Services</a>
+                                <a href="services.php">Service</a>
+                               
                             </li>
                             <li><a href="packages.html">Packages</a></li>
                             <li>
