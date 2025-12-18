@@ -106,29 +106,29 @@
                     </ul>
                 </div>
             </li>
-
             <!-- Enquiry -->
-            <li class="menu-item">
-                <a href="#menuEnquiry" data-bs-toggle="collapse" class="menu-link waves-effect waves-light">
-                    <span class="menu-icon"><i class="bx bx-envelope"></i></span>
-                    <span class="menu-text">Enquiry</span>
-                    <span class="menu-arrow"></span>
-                </a>
-                <div class="collapse" id="menuEnquiry">
-                    <ul class="sub-menu list-unstyled">
-                        <li class="menu-item">
-                            <a href="enquiry_read.php" class="menu-link">
-                                <i class="bx bx-envelope-open me-2"></i>Read Enquiry
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="enquiry_unread.php" class="menu-link">
-                                <i class="bx bx-envelope me-2"></i>Unread Enquiry
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
+              <li class="menu-item">
+                        <a href="#menuMaps" data-bs-toggle="collapse" class="menu-link waves-effect waves-light">
+                            <span class="menu-icon"><i class="bx bx-map-alt"></i></span>
+                            <span class="menu-text">Enquiry</span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <div class="collapse" id="menuMaps">
+                            <ul class="sub-menu">
+                                <li class="menu-item">
+                                    <a href="enquiry_read.php" class="menu-link">
+                                        <span class="menu-text">Read Enquiry</span>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="enquiry_unread.php" class="menu-link">
+                                        <span class="menu-text">Unread Enquiry</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
 
             <!-- Customers -->
             <li class="menu-item">
@@ -177,7 +177,7 @@
             </li>
                   <!-- Logout -->
             <li class="menu-item">
-                <a href="customers.php" class="menu-link waves-effect waves-light">
+                <a href="logout.php" class="menu-link waves-effect waves-light">
                     <span class="menu-icon"><i class="bx bx-log-out"></i></span>
                     <span class="menu-text">Logout</span>
                 </a>
