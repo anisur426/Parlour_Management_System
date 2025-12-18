@@ -1,3 +1,5 @@
+<?php include_once('inc/db_config.php'); ?>
+
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light" data-menu-color="brand" data-topbar-color="light">
 
@@ -125,6 +127,11 @@
                                         </div>
 
                                     </div>
+
+                                    <div class="col-auto">
+                                        <button type="submit" class="btn btn-primary mt-2">Update</button>
+                                    </div>
+
 
 
 

@@ -56,8 +56,8 @@ $rowClass = "table-warning"; // yellow row
                   <th>Customer</th>
                   <th>Apt Number</th>
                   <th>Date</th>
-                  <th>Time</th>
                   <th>Message</th>
+                  <th>Time</th>
                   <th>Status</th>
                   <th>Remark</th>
                   <th>Actions</th>
@@ -65,39 +65,30 @@ $rowClass = "table-warning"; // yellow row
               </thead>
               <tbody>
                 <?php
-                $stmt = $conn->prepare("SELECT * FROM tblbook WHERE Status=? ORDER BY BookingDate DESC");
-                $stmt->bind_param("s", $statusFilter);
-                $stmt->execute();
-                $result = $stmt->get_result();
-                $sl = 1;
-
-                if ($result->num_rows > 0):
-                  while ($row = $result->fetch_assoc()):
+                $sql = "SELECT * FROM tblbook";
+                $rawdata = $conn->query($sql);
+                while ($row = $rawdata->fetch_assoc()):
                 ?>
-                    <tr class="<?= $rowClass ?>">
-                      <td><?= $sl ?></td>
-                      <td><?= $row['UserID'] ?></td>
-                      <td><?= $row['AptNumber'] ?></td>
-                      <td><?= $row['AptDate'] ?></td>
-                      <td><?= $row['AptTime'] ?></td>
-                      <td><?= $row['Message'] ?></td>
-                      <td><span class="badge bg-warning"><?= $row['Status'] ?></span></td>
-                      <td><?= $row['Remark'] ?></td>
-                      <td>
-                        <!-- Accept/Reject buttons -->
-                        <a href="?action=accept&id=<?= $row['ID'] ?>" class="btn btn-sm btn-success" onclick="return confirm('Accept this appointment?')">Accept</a>
-                        <a href="?action=reject&id=<?= $row['ID'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Reject this appointment?')">Reject</a>
-                      </td>
-                    </tr>
-                  <?php
-                    $sl++;
-                  endwhile;
-                else:
-                  ?>
                   <tr>
-                    <td colspan="9" class="text-center text-muted">No appointments found.</td>
+
+                    <td><?php $row['UserID'] ?></td>
+                    <td><?= $row['AptNumber'] ?></td>
+                    <td><?= $row['AptDate'] ?></td>
+                    <td><?= $row['AptTime'] ?></td>
+                    <td><?= $row['Message'] ?></td>
+                    <td><?= $row['BookingDate'] ?></td>
+                    <!-- <td>
+                      
+                      <a href="?action=accept&id=<?= $row['ID'] ?>" class="btn btn-sm btn-success" onclick="return confirm('Accept this appointment?')">Accept</a>
+                      <a href="?action=reject&id=<?= $row['ID'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Reject this appointment?')">Reject</a>
+                    </td> -->
                   </tr>
-                <?php endif; ?>
+                <?php
+
+                endwhile;
+
+                ?>
+
               </tbody>
 
             </table>
