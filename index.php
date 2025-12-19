@@ -288,22 +288,7 @@
                     <!-- Single Slider End -->
 
                     <!-- Single Slider Start -->
-                    <div class="swiper-slide animation-style-01 single-slider d-flex align-items-center" style="background-image: url(assets/images/slider/slider-2.webp);">
-                        <div class="container">
-                            <div class="slider-content content-white">
-                                <h1 class="title">Relaxation <br> Bath with the <br> Aroma Therapy</h1>
-                                <ul class="slider-meta">
-                                    <li><a href="#" class="btn btn-white btn-hover-primary">Book Now</a></li>
-                                    <li><a href="https://www.youtube-nocookie.com/embed/Ga6RYejo6Hk" class="video-play glightbox"><span class="icon"><i class="fa fa-play"></i></span> Watch Video</a></li>
-                                </ul>
-                                <ul class="slider-social">
-                                    <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                  
                     <!-- Single Slider End -->
 
                 </div>

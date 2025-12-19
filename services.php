@@ -335,13 +335,15 @@
                         ?>
                         <div class="col">
                             <!-- Services Start -->
-                            <div class="single-services text-center" data-aos="fade-up" data-aos-delay="200">
+                            <div class="single-services text-center" data-aos="fade-up" data-aos-delay="250">
                                 <div class="services-image">
-                                    <a href="therapy-details.html"><img src="assets/images/services/services-1.webp" width="233" height="233" alt="services"></a>
-                                    <span class="price"> $<?php $row->cost; ?></span>
+                                  <img src="Admin/uploads/<?php echo $row->Image; ?>" width="233" height="233" alt="services">
+
+                                    <span class="price">৳<?php echo $row->Cost; ?></span>
+                                    
                                 </div>
                                 <div class="services-content">
-                                    <h4 class="title"><a href="therapy-details.html"><?php $row->ServiceName; ?></a></h4>
+                                    <h4 class="title"><a href="therapy-details.html"><?php echo $row->ServiceName; ?></a></h4>
                                     <p>Hot Stone Spa is the best your health and refresh</p>
                                 </div>
                             </div>

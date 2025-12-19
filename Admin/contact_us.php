@@ -32,14 +32,14 @@
     <div class="layout-wrapper">
 
         <!-- ========== Left Sidebar ========== -->
-        <?php include("inc/db_config.php"); ?>
+        <?php include("inc/left_Sidebar.php"); ?>
 
 
         <!-- Start Page Content here -->
         <div class="page-content">
 
             <!-- ========== Topbar Start ========== -->
-            <?php include("inc/db_config.php"); ?>
+            <?php include("inc/topbar.php"); ?>
             <!-- ========== Topbar End ========== -->
 
             <div class="px-3">
@@ -53,6 +53,12 @@
                             <div class="col-lg-6">
                                 <h4 class="page-title mb-0">Update Contact Us</h4>
                             </div>
+                                            <php
+                        $WE=66;
+                        print_r($we)
+                        ?>
+ 
+                              
                             <div class="col-lg-6">
                                 <div class="d-none d-lg-block">
                                     <ol class="breadcrumb m-0 float-end">
@@ -65,11 +71,13 @@
                     <!-- end page title -->
 
                     <div class="row justify-content-center">
+                       
                         <div class="col-md-8">
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="header-title">Update Contact Us</h4>
-
+                                <form method="post" action="">
+                           
 
                                     <div class="row justify-content-center">
                                         <div class="col-md-10">
@@ -131,6 +139,9 @@
                                     <div class="col-auto">
                                         <button type="submit" class="btn btn-primary mt-2">Update</button>
                                     </div>
+         
+                                </form>
+
 
 
 
@@ -146,7 +157,7 @@
             </div> <!-- content -->
 
             <!-- Footer Start -->
-            <?php include("inc/db_config.php"); ?>
+            <?php include("inc/footer.php"); ?>
             <!-- end Footer -->
 
         </div>

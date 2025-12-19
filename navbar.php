@@ -1,11 +1,13 @@
    <div class="header-navbar d-none d-lg-block">
                         <ul class="navbar-menu">
                             <li><a href="index.php">Home</a></li>
+                                <li><a href="about.php">About</a></li>
+                            
                             <li>
                                 <a href="services.php">Service</a>
                                
                             </li>
-                            <li><a href="packages.html">Packages</a></li>
+                        
                             <li>
                                 <a href="#">Shop</a>
                                 <ul class="sub-menu">
