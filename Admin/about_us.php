@@ -1,147 +1,123 @@
 <?php include("inc/db_config.php"); ?>
-<?php
 
-$query = mysqli_query($conn, "SELECT * FROM  tblpage  WHERE PageType='aboutus'");
+<?php
+$message = "";
+
+// Fetch the aboutus page
+$query = mysqli_query($conn, "SELECT * FROM tblpage WHERE PageType='aboutus' LIMIT 1");
 $row = mysqli_fetch_assoc($query);
 
+// Update handler
+if (isset($_POST['update'])) {
+  $PageTitle = $_POST['pagetitle'];
+  $PageDescription = $_POST['pagedes'];
+
+  $updateQuery = "UPDATE tblpage SET PageTitle='$PageTitle', PageDescription='$PageDescription' WHERE PageType='aboutus'";
+  if (mysqli_query($conn, $updateQuery)) {
+    $message = "Page Updated Successfully";
+    // Refresh row data
+    $query = mysqli_query($conn, "SELECT * FROM tblpage WHERE PageType='aboutus' LIMIT 1");
+    $row = mysqli_fetch_assoc($query);
+  } else {
+    $message = "Page Not Updated";
+  }
+}
 ?>
 
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="light" data-menu-color="brand" data-topbar-color="light">
+<html lang="en" data-bs-theme="light">
 
 <head>
-    <meta charset="utf-8" />
-    <title>Form Elements | Dashtrap - Responsive Bootstrap 5 Admin Dashboard</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
-    <meta content="Myra Studio" name="author" />
-
-    <!-- App favicon -->
-    <link rel="shortcut icon" href="assets/images/favicon.ico">
-
-    <!-- App css -->
-    <link href="assets/css/style.min.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css">
-    <script src="assets/js/config.js"></script>
-    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
-    <script>
-        tinymce.init({
-            selector: '#example-textarea',
-            menubar: false,
-            plugins: 'lists link image table code',
-            toolbar: 'undo redo | bold italic underline | alignleft aligncenter alignright | bullist numlist | link image | code'
-        });
-    </script>
-
+  <meta charset="utf-8" />
+  <title>About Us | Admin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="assets/images/favicon.ico">
+  <link href="assets/css/style.min.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
 
-    <!-- Begin page -->
-    <div class="layout-wrapper">
+  <div class="layout-wrapper">
+    <?php include('inc/left_Sidebar.php'); ?>
+    <div class="page-content">
+      <?php include('inc/topbar.php'); ?>
 
-        <!-- ========== Left Sidebar ========== -->
-        <?php include('inc/left_Sidebar.php'); ?>
+      <div class="px-3">
+        <div class="container-fluid">
 
-
-        <!-- Start Page Content here -->
-        <div class="page-content">
-
-            <!-- ========== Topbar Start ========== -->
-            <?php include('inc/topbar.php'); ?>
-            <!-- ========== Topbar End ========== -->
-
-            <div class="px-3">
-
-                <!-- Start Content-->
-                <div class="container-fluid">
-
-                    <!-- start page title -->
-                    <div class="py-3 py-lg-4">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <h4 class="page-title mb-0">About Us</h4>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="d-none d-lg-block">
-                                    <ol class="breadcrumb m-0 float-end">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Forms</a></li>
-                                        <li class="breadcrumb-item active">Form Elements</li>
-                                    </ol>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end page title -->
-
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h4 class="header-title">About Us</h4>
-
-
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="p-2">
-
-                                                <form class="form-horizontal" role="form" method="post" action="update_about.php">
-
-                                                    <div class="mb-2 row">
-                                                        <label class="col-md-2 col-form-label" for="simpleinput">Page Title</label>
-                                                        <div class="col-md-10">
-                                                            <input type="text"
-                                                                id="simpleinput"
-                                                                class="form-control"
-                                                                name="pagetitle"
-                                                                value="<?php echo $row['PageTitle']; ?>">
-
-                                                        </div>
-
-
-                                                    </div>
-
-                                                    <div class="mb-2 row">
-                                                        <label class="col-md-2 col-form-label" for="example-textarea">Page Description</label>
-                                                        <div class="col-md-10">
-                                                            <textarea class="form-control" id="example-textarea" name="pagedes" rows="5">
-                                                                <?php echo $row['PageDescription']; ?></textarea>
-
-
-                                                            <div class="col-auto">
-                                                                <button type="submit" class="btn btn-primary mt-2">Update</button>
-                                                            </div>
-
-                                                        </div>
-
-
-                                                </form>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <!-- end row -->
-                                </div>
-                            </div> <!-- end card -->
-                        </div><!-- end col -->
-                    </div>
-                    <!-- end row -->
-
-                </div> <!-- content -->
-
-                <!-- Footer Start -->
-                <?php include("inc/footer.php"); ?>
-                <!-- end Footer -->
+          <div class="py-3 py-lg-4">
+            <div class="row">
+              <div class="col-lg-6">
+                <h4 class="page-title mb-0">About Us</h4>
+              </div>
+              <div class="col-lg-6">
+                <div class="d-none d-lg-block">
+                  <ol class="breadcrumb m-0 float-end">
+                    <li class="breadcrumb-item"><a href="javascript:void(0);">Forms</a></li>
+                    <li class="breadcrumb-item active">About Us</li>
+                  </ol>
+                </div>
+              </div>
             </div>
-            <!-- End Page content -->
+          </div>
 
+          <div class="row">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="header-title">Edit About Us</h4>
+
+                  <?php if ($message != "") { ?>
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                      <i class="mdi mdi-check-all me-2"></i>
+                      <?php echo $message; ?>
+                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                  <?php } ?>
+
+                  <form class="form-horizontal" method="post">
+                    <div class="mb-2 row">
+                      <label class="col-md-2 col-form-label" for="pagetitle">Page Title</label>
+                      <div class="col-md-10">
+                        <input type="text"
+                          id="pagetitle"
+                          class="form-control"
+                          name="pagetitle"
+                          value="<?php echo htmlspecialchars($row['PageTitle']); ?>">
+                      </div>
+                    </div>
+
+                    <div class="mb-2 row">
+                      <label class="col-md-2 col-form-label" for="pagedes">Page Description</label>
+                      <div class="col-md-10">
+                        <textarea class="form-control"
+                          id="pagedes"
+                          name="pagedes"
+                          rows="5"><?php echo htmlspecialchars($row['PageDescription']); ?></textarea>
+                      </div>
+                    </div>
+
+                    <div class="mb-2 row">
+                      <div class="col-md-10 offset-md-2">
+                        <button type="submit" name="update" class="btn btn-primary">Update</button>
+                      </div>
+                    </div>
+                  </form>
+
+                </div>
+              </div>
+            </div>
+          </div>
 
         </div>
-        <!-- END wrapper -->
+        <?php include("inc/footer.php"); ?>
+      </div>
+    </div>
+  </div>
 
-        <!-- App js -->
-        <script src="assets/js/vendor.min.js"></script>
-        <script src="assets/js/app.js"></script>
+  <script src="assets/js/vendor.min.js"></script>
+  <script src="assets/js/app.js"></script>
 
 </body>
 
