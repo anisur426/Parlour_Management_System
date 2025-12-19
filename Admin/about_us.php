@@ -78,7 +78,7 @@ if (isset($_POST['update'])) {
 
                   <form class="form-horizontal" method="post">
                     <div class="mb-2 row">
-                      <label class="col-md-2 col-form-label" for="pagetitle">Page Title</label>
+                      <label class="col-md-2 col-form-label" for="pagetitle">Page Title:</label>
                       <div class="col-md-10">
                         <input type="text"
                           id="pagetitle"
@@ -89,7 +89,7 @@ if (isset($_POST['update'])) {
                     </div>
 
                     <div class="mb-2 row">
-                      <label class="col-md-2 col-form-label" for="pagedes">Page Description</label>
+                      <label class="col-md-2 col-form-label" for="pagedes">Page Description:</label>
                       <div class="col-md-10">
                         <textarea class="form-control"
                           id="pagedes"

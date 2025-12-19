@@ -286,11 +286,11 @@
 
                 <!-- Page Banner Content Start -->
                 <div class="page-banner-content">
-                    <h2 class="title">Our Spa</h2>
+                    <h2 class="title">Our Service</h2>
                     <p>Peerly is the best Spa therapy is the best way of Spa perfectly simple and easy to distinguish power</p>
                     <ul class="breadcrumb">
                         <li><a href="index.html">Home</a></li>
-                        <li>Spa</li>
+                        <li>Service</li>
                     </ul>
                 </div>
                 <!-- Page Banner Content End -->
