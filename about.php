@@ -330,10 +330,8 @@
                        
                         $sql = "SELECT * FROM  tblpage WHERE PageType='aboutus' ";
                         $rawdata = $conn->query($sql);
-                        
-                      if($rawdata && $rawdata->num_rows > 0){
-                     $row = $rawdata->fetch_object();
-                    ?>
+                        while($row = $rawdata->fetch_object()){
+                        ?> 
                     <div class="col" data-aos="fade-up" data-aos-delay="200">
                         <!-- Single Package Start -->
                         <div class="single-package">
@@ -363,11 +361,7 @@
                         </div>
                         <!-- Single Package End -->
                     </div>
-                  <?php
-} else {
-    echo "About Us ডাটা পাওয়া যায়নি";
-}
-?>
+                    <?php } ?>
                     <div class="col active" data-aos="fade-up" data-aos-delay="400">
                         <!-- Single Package Start -->
                         <div class="single-package">

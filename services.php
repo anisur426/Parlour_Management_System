@@ -335,7 +335,7 @@
                         ?>
                         <div class="col">
                             <!-- Services Start -->
-                            <div class="single-services text-center" data-aos="fade-up" data-aos-delay="250">
+                            <div class="single-services text-center" data-aos="fade-up" data-aos-delay="200">
                                 <div class="services-image">
                                   <img src="Admin/uploads/<?php echo $row->Image; ?>" width="233" height="233" alt="services">
 
