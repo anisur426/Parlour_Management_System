@@ -28,10 +28,10 @@
             <!-- Services -->
             <li class="menu-item">
                 <a href="#menuServices" data-bs-toggle="collapse" class="menu-link waves-effect waves-light">
-  <span class="menu-icon">
-    <i class="bx bx-face"></i>
+                    <span class="menu-icon">
+                        <i class="bx bx-face"></i>
 
-</span>
+                    </span>
                     <span class="menu-text">Services</span>
                     <span class="menu-arrow"></span>
                 </a>
@@ -107,27 +107,27 @@
                 </div>
             </li>
             <!-- Enquiry -->
-              <li class="menu-item">
-                        <a href="#menuMaps" data-bs-toggle="collapse" class="menu-link waves-effect waves-light">
-                            <span class="menu-icon"><i class="bx bx-map-alt"></i></span>
-                            <span class="menu-text">Enquiry</span>
-                            <span class="menu-arrow"></span>
-                        </a>
-                        <div class="collapse" id="menuMaps">
-                            <ul class="sub-menu">
-                                <li class="menu-item">
-                                    <a href="enquiry_read.php" class="menu-link">
-                                        <span class="menu-text">Read Enquiry</span>
-                                    </a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="enquiry_unread.php" class="menu-link">
-                                        <span class="menu-text">Unread Enquiry</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
+            <li class="menu-item">
+                <a href="#menuMaps" data-bs-toggle="collapse" class="menu-link waves-effect waves-light">
+                    <span class="menu-icon"><i class="bx bx-map-alt"></i></span>
+                    <span class="menu-text">Enquiry</span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <div class="collapse" id="menuMaps">
+                    <ul class="sub-menu">
+                        <li class="menu-item">
+                            <a href="enquiry_read.php" class="menu-link">
+                                <span class="menu-text">Read Enquiry</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="enquiry_unread.php" class="menu-link">
+                                <span class="menu-text">Unread Enquiry</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
 
 
             <!-- Customers -->
@@ -137,9 +137,9 @@
                     <span class="menu-text">Customers</span>
                 </a>
             </li>
-             <!-- Invoice -->
+            <!-- Invoice -->
             <li class="menu-item">
-                <a href="customers.php" class="menu-link waves-effect waves-light">
+                <a href="invoice.php" class="menu-link waves-effect waves-light">
                     <span class="menu-icon"><i class="fa fa-file-invoice-dollar"></i></span>
                     <span class="menu-text">Invoice</span>
                 </a>
@@ -168,20 +168,29 @@
                     </ul>
                 </div>
             </li>
-               <!-- Appointment -->
+            <!-- Appointment -->
             <li class="menu-item">
                 <a href="customers.php" class="menu-link waves-effect waves-light">
                     <span class="menu-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
                     <span class="menu-text">Appointment</span>
                 </a>
             </li>
-                  <!-- Logout -->
+            <!-- Invoice -->
+            <li class="menu-item">
+                <a href="search-invoices.php" class="menu-link waves-effect waves-light">
+                    <span class="menu-icon"><i class="fa fa-file-invoice-dollar"></i></span>
+                    <span class="menu-text">Search Invoice</span>
+                </a>
+            </li>
+
+            <!-- Logout -->
             <li class="menu-item">
                 <a href="logout.php" class="menu-link waves-effect waves-light">
                     <span class="menu-icon"><i class="bx bx-log-out"></i></span>
                     <span class="menu-text">Logout</span>
                 </a>
             </li>
+
 
 
         </ul>

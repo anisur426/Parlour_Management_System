@@ -41,14 +41,14 @@ $rowClass = "table-success"; // green row
                   <th>Time</th>
                   <th>Message</th>
                   <th>Status</th>
-                  <th>Remark</th>
+
                   <th>Actions</th>
                 </tr>
               </thead>
               <tbody>
                 <?php
-                $stmt = $conn->prepare("SELECT * FROM tblbook WHERE Status=? ORDER BY BookingDate DESC");
-                $stmt->bind_param("s", $statusFilter);
+                $stmt = $conn->prepare("SELECT * FROM tblbook WHERE Status = 'Approved' ORDER BY BookingDate DESC");
+
                 $stmt->execute();
                 $result = $stmt->get_result();
                 $sl = 1;
@@ -64,7 +64,7 @@ $rowClass = "table-success"; // green row
                       <td><?= $row['AptTime'] ?></td>
                       <td><?= $row['Message'] ?></td>
                       <td><span class="badge bg-success"><?= $row['Status'] ?></span></td>
-                      <td><?= $row['Remark'] ?></td>
+
                       <td>
                         <a href="edit_appointment.php?id=<?= $row['ID'] ?>" class="btn btn-sm btn-primary">Edit</a>
                         <a href="delete_appointment.php?id=<?= $row['ID'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Delete this appointment?')">Delete</a>

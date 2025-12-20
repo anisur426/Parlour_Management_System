@@ -1,4 +1,4 @@
-<?php include_once("Admin/inc/db_config.php");?>
+<?php include_once("Admin/inc/db_config.php"); ?>
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -52,7 +52,7 @@
                     <!-- Header Logo End -->
 
                     <!-- Header Navbar Start -->
-                   <?php include('navbar.php'); ?>
+                    <?php include('navbar.php'); ?>
                     <!-- Header Navbar End -->
 
                     <!-- Hewader Meta Start -->
@@ -315,52 +315,53 @@
         <!-- Packages Start -->
         <div class="section section-padding">
             <div class="container">
+                <?php
 
-                <!-- Section Title Start -->
-                <div class="section-title text-center">
-                    <h6 class="sub-title">Details About Us</h6>
-                    <h2 class="title">We provide best Spa Packages <br> for our clients <u>satisfaction</u> </h2>
-                    <p>Our main focus is on quality and hygiene. Our Parlour is well equipped with advanced technology equipments and provides best quality services. Our staff is well trained and experienced, offering advanced services in Skin, Hair and Body Shaping that will provide you with a luxurious experience that leave you feeling relaxed and stress free. The specialities in the parlour are, apart from regular bleachings and Facials, many types of hairstyles, Bridal and cine make-up and different types of Facials & fashion hair colourings.</p>
-                </div>
-                <!-- Section Title End -->
+                $sql = "SELECT * FROM  tblpage WHERE PageType='aboutus' ";
+                $rawdata = $conn->query($sql);
+                while ($row = $rawdata->fetch_object()) {
+                ?>
 
-                <!-- Packages Wrapper Start -->
-                <div class="packages-wrapper row row-cols-lg-3 row-cols-lg-2 row-cols-1 justify-content-center">
-                    <?php 
-                       
-                        $sql = "SELECT * FROM  tblpage WHERE PageType='aboutus' ";
-                        $rawdata = $conn->query($sql);
-                        while($row = $rawdata->fetch_object()){
-                        ?> 
-                    <div class="col" data-aos="fade-up" data-aos-delay="200">
-                        <!-- Single Package Start -->
-                        <div class="single-package">
-
-                            <img class="shape-1  movebounce-02" src="assets/images/shape/shape-19.webp" alt="Shape">
-
-                            <div class="package-header text-center">
-                                <h3><?php echo $row->PageTitle;?></h3>
-
-
-                                <p>Peerly is the best way to make of Spa cases are perfectly</p>
-                            </div>
-                            <div class="package-body">
-                                <ul class="package-list">
-                                    <li class="active">Hot Stone Spa</li>
-                                    <li class="active">Facial Scrub</li>
-                                    <li class="active">Oil Massage</li>
-                                    <li>Tea Therapy</li>
-                                    <li>Body Treatment</li>
-                                    <li>Herbal Massage</li>
-                                </ul>
-                            </div>
-                            <div class="package-footer text-center">
-                                <p class="price"><strong><sup>$</sup>125</strong> <span>Per month</span></p>
-                                <a class="btn btn-primary btn-hover-dark" href="#">Book Now</a>
-                            </div>
-                        </div>
-                        <!-- Single Package End -->
+                    <!-- Section Title Start -->
+                    <div class="section-title text-center">
+                        <h6 class="sub-title"><?php echo $row->PageTitle ?></h6>
+                        <h2 class="title">We provide best Spa Packages <br> for our clients <u>satisfaction</u> </h2>
+                        <p><?php echo $row->PageDescription; ?></p>
                     </div>
+                    <!-- Section Title End -->
+
+                    <!-- Packages Wrapper Start -->
+                    <div class="packages-wrapper row row-cols-lg-3 row-cols-lg-2 row-cols-1 justify-content-center">
+
+                        <div class="col" data-aos="fade-up" data-aos-delay="200">
+                            <!-- Single Package Start -->
+                            <div class="single-package">
+
+                                <img class="shape-1  movebounce-02" src="assets/images/shape/shape-19.webp" alt="Shape">
+
+                                <div class="package-header text-center">
+                                    <h3><?php echo $row->PageTitle; ?></h3>
+
+
+                                    <p>Peerly is the best way to make of Spa cases are perfectly</p>
+                                </div>
+                                <div class="package-body">
+                                    <ul class="package-list">
+                                        <li class="active">Hot Stone Spa</li>
+                                        <li class="active">Facial Scrub</li>
+                                        <li class="active">Oil Massage</li>
+                                        <li>Tea Therapy</li>
+                                        <li>Body Treatment</li>
+                                        <li>Herbal Massage</li>
+                                    </ul>
+                                </div>
+                                <div class="package-footer text-center">
+                                    <p class="price"><strong><sup>$</sup>125</strong> <span>Per month</span></p>
+                                    <a class="btn btn-primary btn-hover-dark" href="#">Book Now</a>
+                                </div>
+                            </div>
+                            <!-- Single Package End -->
+                        </div>
                     <?php } ?>
                     <div class="col active" data-aos="fade-up" data-aos-delay="400">
                         <!-- Single Package Start -->
@@ -381,7 +382,7 @@
                                     <li>Body Treatment</li>
                                     <li>Herbal Massage</li>
                                 </ul>
-                            </div> 
+                            </div>
                             <div class="package-footer text-center">
                                 <p class="price"><strong><sup>$</sup>140</strong> <span>Per month</span></p>
                                 <a class="btn btn-primary btn-hover-dark" href="#">Book Now</a>
@@ -416,8 +417,8 @@
                         </div>
                         <!-- Single Package End -->
                     </div>
-                </div>
-                <!-- Packages Wrapper End -->
+                    </div>
+                    <!-- Packages Wrapper End -->
             </div>
         </div>
         <!-- Packages End -->
@@ -463,7 +464,7 @@
         <!-- Brand End -->
 
         <!-- Footer Start -->
-      <?php include ('footer.php'); ?>
+        <?php include('footer.php'); ?>
         <!-- Footer End -->
 
         <!--Back To Start-->

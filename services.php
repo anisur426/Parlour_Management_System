@@ -272,7 +272,7 @@
                                 <li><a href="blog-details-right-sidebar.html">Blog Details Right Sidebar</a></li>
                             </ul>
                         </li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="contact.php">Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -380,7 +380,7 @@
                     </div>
                     <!-- Section Title End -->
                     <h4 class="discount">Get up to 65% Discount</h4>
-                    <a href="contact.html" class="btn btn-primary btn-hover-dark">Book Now</a>
+                    <a href="contact.php" class="btn btn-primary btn-hover-dark">Book Now</a>
                 </div>
                 <!-- Call to Action Wrapper End -->
 

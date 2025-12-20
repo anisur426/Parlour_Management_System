@@ -1,9 +1,10 @@
 <?php
 include_once('inc/db_config.php');
 
-$pageTitle = "Rejected Appointments";
-$statusFilter = "Rejected";
-$rowClass = "table-danger"; // red highlight for rejected
+// Accepted appointments
+$statusFilter = "Accepted";
+$pageTitle = "Accepted Appointments";
+$rowClass = "table-success"; // green row
 ?>
 
 <!DOCTYPE html>
@@ -40,14 +41,14 @@ $rowClass = "table-danger"; // red highlight for rejected
                   <th>Time</th>
                   <th>Message</th>
                   <th>Status</th>
-                  <th>Remark</th>
+
                   <th>Actions</th>
                 </tr>
               </thead>
               <tbody>
                 <?php
-                $stmt = $conn->prepare("SELECT * FROM tblbook WHERE Status=? ORDER BY BookingDate DESC");
-                $stmt->bind_param("s", $statusFilter);
+                $stmt = $conn->prepare("SELECT * FROM tblbook WHERE Status = 'Rejected' ORDER BY BookingDate DESC");
+
                 $stmt->execute();
                 $result = $stmt->get_result();
                 $sl = 1;
@@ -62,8 +63,8 @@ $rowClass = "table-danger"; // red highlight for rejected
                       <td><?= $row['AptDate'] ?></td>
                       <td><?= $row['AptTime'] ?></td>
                       <td><?= $row['Message'] ?></td>
-                      <td><span class="badge bg-danger"><?= $row['Status'] ?></span></td>
-                      <td><?= $row['Remark'] ?></td>
+                      <td><span class="badge bg-success"><?= $row['Status'] ?></span></td>
+
                       <td>
                         <a href="edit_appointment.php?id=<?= $row['ID'] ?>" class="btn btn-sm btn-primary">Edit</a>
                         <a href="delete_appointment.php?id=<?= $row['ID'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Delete this appointment?')">Delete</a>
@@ -75,7 +76,7 @@ $rowClass = "table-danger"; // red highlight for rejected
                 else:
                   ?>
                   <tr>
-                    <td colspan="9" class="text-center text-muted">No rejected appointments found.</td>
+                    <td colspan="9" class="text-center text-muted">No appointments found.</td>
                   </tr>
                 <?php endif; ?>
               </tbody>

@@ -1,4 +1,9 @@
-<?php include_once("Admin/inc/db_config.php");
+<?php include_once("Admin/inc/db_config.php"); 
+session_start();
+      if(isset($_SESSION['ID'])){
+                                echo "hello";
+                             }
+
 ?>
 <!doctype html>
 <html class="no-js" lang="en">
@@ -53,7 +58,7 @@
                     <!-- Header Logo End -->
 
                     <!-- Header Navbar Start -->
-                  <?php include("navbar.php") ?>
+                    <?php include("navbar.php") ?>
                     <!-- Header Navbar End -->
 
                     <!-- Hewader Meta Start -->
@@ -90,20 +95,7 @@
                                         </li>
                                         <li>
                                             <!-- Single Cart Item Start -->
-                                            <div class="single-cart-item">
-                                                <div class="cart-thumb">
-                                                    <img src="assets/images/mini-cart/cart-2.webp" alt="Cart">
-                                                    <span class="product-quantity">1x</span>
-                                                </div>
-                                                <div class="cart-item-content">
-                                                    <h6 class="product-name"><a href="product-details-left-sidebar.html">New Balance Fresh Foam LAZR v1 Sport</a> </h6>
-                                                    <span class="product-price">$19.12</span>
-                                                    <div class="attributes-content">
-                                                        <span><strong>Color:</strong> White </span>
-                                                    </div>
-                                                    <button class="cart-remove"><i class="icofont-close-line"></i></button>
-                                                </div>
-                                            </div>
+
                                             <!-- Single Cart Item End -->
                                         </li>
                                         <li>
@@ -286,11 +278,11 @@
 
                 <!-- Page Banner Content Start -->
                 <div class="page-banner-content">
-                    <h2 class="title">Login</h2>
+                    <h2 class="title">Contact Us</h2>
                     <p>Peerly is the best Spa therapy is the best way of Spa perfectly simple and easy to distinguish power</p>
                     <ul class="breadcrumb">
                         <li><a href="index.html">Home</a></li>
-                        <li>Admin</li>
+                        <li>Contact</li>
                     </ul>
                 </div>
                 <!-- Page Banner Content End -->
@@ -312,80 +304,85 @@
 
         </div>
         <!-- Page Banner End -->
+        <?php include_once("Admin/inc/db_config.php"); ?>
 
-        <!-- Login & Register Section Start -->
-        <div class="section section-padding-02">
-            <div class="container">
-<?php
-if(isset($_POST['login'])){
-
-    $email = $_POST['Email'];
-    $password = md5($_POST['password']);
-
-    $sql = "SELECT * FROM tbluser 
-            WHERE Email='$email' AND Password='$password'";
-    $result = $conn->query($sql);
-
-    if($result && $result->num_rows > 0){
-
-        $row = $result->fetch_assoc();
-        echo "<span style='color:green'>Login Successful!</span><br>";
-        echo "Welcome, ".$row['FirstName'];
-
-    } else {
-        echo "<span style='color:red'>Invalid Email or Password</span>";
-    }
-}
-?>
-
-
-
-                <!-- Register & Login Wrapper Start -->
-                <div class="register-login-wrapper">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-6 col-xl-5">
-
-                            <!-- Register & Login Form Start -->
-                            <div class="register-login-form">
-                                <h3 class="title">Login <span>Now</span></h3>
-
-                                <div class="form-wrapper">
-                                    <form action="" method="post">
-                                        <!-- Single Form Start -->
-                                        <div class="single-form">
-                                            <input type="email" name="Email" placeholder="Username or Email">
-                                        </div>
-                                        <!-- Single Form End -->
-                                        <!-- Single Form Start -->
-                                        <div class="single-form">
-                                            <input type="password" name="password" placeholder="Password">
-                                        </div>
-                                        <!-- Single Form End -->
-                                        <!-- Single Form Start -->
-                                        <div class="single-form">
-                                            <button type="submit" name="login" class="btn btn-primary btn-hover-dark w-100">Login</button>
-                                            <a class="btn btn-dark btn-hover-primary w-100" href="#">Login with Google</a>
-                                        </div>
-                                        <!-- Single Form End -->
-                                        <p><a href="#">Lost your password?</a></p>
-                                        <p>No account? <a href="register.html">Create one here.</a></p>
-                                    </form>
-                                </div>
-                            </div>
-                            <!-- Register & Login Form End -->
-
+        <!-- Contact Form Wrapper Start -->
+        <div class="contact-form-wrapper">
+            <div class="row flex-row-reverse justify-content-center">
+                <div class="col-lg-6 col-md-8 col-sm-10">
+                    <!-- Contact Form Image Start -->
+                    <div class="contact-form-image">
+                        <div class="image">
+                            <img src="assets/images/contact-2.webp" width="506" height="527" alt="Choose">
                         </div>
                     </div>
+                    <!-- Contact Form Image End -->
                 </div>
-           
-                <!-- Register & Login Wrapper End -->
 
+                <div class="col-lg-6">
+                    <!-- Contact Form Start -->
+                    <div class="contact-form">
+                        <h3 class="form-title">Leave a Reply</h3>
+
+                        <?php
+                       
+                        if (isset($_POST['submit_contact'])) {
+                            $fname = $conn->real_escape_string($_POST['AptDate']);
+                            $lname = $conn->real_escape_string($_POST['AptTime']);
+                            $message = $conn->real_escape_string($_POST['Message']);
+                             $userId = $_SESSION['ID'];
+                       
+
+
+                            $sql = "INSERT INTO tblbook (UserID, AptDate, AptTime, Message)
+                            VALUES ('$userId', '$fname', '$lname', '$message')";
+
+                            if ($conn->query($sql)) {
+                                echo '<div class="alert alert-success">Your message has been sent successfully!</div>';
+                            } else {
+                                echo '<div class="alert alert-danger">Error: ' . $conn->error . '</div>';
+                            }
+                        }
+                        ?>
+
+                        <form action="" method="post">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="single-form">
+                                        <input type="date" name="AptDate" placeholder="date*" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="single-form">
+                                        <input type="time" name="AptTime" placeholder="time*" required>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-12">
+                                    <div class="single-form">
+                                        <textarea name="Message" placeholder="Write here*" required></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="btn-margin">
+                                        <button type="submit" name="submit_contact" class="btn btn-primary btn-hover-dark">Send Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                    <!-- Contact Form End -->
+                </div>
             </div>
         </div>
-        <!-- Login & Register Section End -->
+        <!-- Contact Form Wrapper End -->
+
+
 
         <!-- Footer Start -->
-       <?php include ("footer.php");?>
+        <?php include("footer.php"); ?>
         <!-- Footer End -->
 
         <!--Back To Start-->
