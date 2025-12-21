@@ -1,4 +1,7 @@
-<?php include_once ("Admin/inc/db_config.php");?>
+<?php
+ include_once ("Admin/inc/db_config.php");
+session_start();
+?>
 <!doctype html>
 <html class="no-js" lang="en">
 

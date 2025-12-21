@@ -1,6 +1,4 @@
-<?php include_once('inc/db_config.php');
-session_start();
-?>
+
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light" data-menu-color="brand" data-topbar-color="light">
 
@@ -116,11 +114,25 @@ session_start();
 
                             <div class="row">
                                 <div class="col-12">
-                                    <?php
-                                    
-                                    $sql = "SELECT * FROM tblinvoice WHERE () "
+                                <?php
+include_once('inc/db_config.php');
+session_start();
 
-                                    ?>
+if (!isset($_SESSION['ID'])) {
+    echo "User not logged in";
+    exit;
+}
+
+$userid = $_SESSION['ID'];
+
+$sql = "SELECT id, Userid, ServiceId, BillingId, PostingDate 
+        FROM tblinvoice 
+        WHERE Userid = $userid";
+
+$result = mysqli_query($conn, $sql);
+?>
+
+
                                     <div class="table-responsive">
                                         <table class="table mt-4 table-centered">
                                             <thead class="">
@@ -132,29 +144,33 @@ session_start();
                                                     <th style="width: 10%" class="text-end">Total</th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>
-                                                        <h5>Web Design</h5>
-                                                        <p class="text-muted mb-0">2 Pages static website - my website</p>
-                                                    </td>
-                                                    <td>22</td>
-                                                    <td>$30</td>
-                                                    <td class="text-end">$660.00</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>2</td>
-                                                    <td>
-                                                        <h5>Software Development</h5>
-                                                        <p class="text-muted mb-0">Invoice editor software - AB'c Software</p>
-                                                    </td>
-                                                    <td>112.5</td>
-                                                    <td>$35</td>
-                                                    <td class="text-end">$3937.50</td>
-                                                </tr>
+        <tbody>
+<?php
+if ($result && mysqli_num_rows($result) > 0) {
+    $sl = 1;
+    while ($row = mysqli_fetch_assoc($result)) {
+?>
+<tr>
+    <td><?php echo $sl++; ?></td>
+    <td>
+        <h5>Service ID: <?php echo $row['ServiceId']; ?></h5>
+        <p class="text-muted mb-0">
+            Billing ID: <?php echo $row['BillingId']; ?>
+        </p>
+    </td>
+    <td><?php echo $row['Userid']; ?></td>
+    <td><?php echo $row['PostingDate']; ?></td>
+    <td class="text-end"><?php echo $row['id']; ?></td>
+</tr>
+<?php
+    }
+} else {
+    echo "<tr><td colspan='5'>No Invoice Found</td></tr>";
+}
+?>
+</tbody>
 
-                                            </tbody>
+
                                         </table>
                                     </div> <!-- end table-responsive -->
                                 </div> <!-- end col -->

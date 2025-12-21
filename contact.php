@@ -1,4 +1,7 @@
-<?php include_once("Admin/inc/db_config.php");?>
+<?php
+ include_once("Admin/inc/db_config.php");
+ session_start();
+ ?>
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -319,7 +322,7 @@
                 <h3 class="form-title">Leave a Reply</h3>
 
                 <?php
-                // Form submit হলে ডাটা save হবে
+           
                 if(isset($_POST['submit_contact'])){
                     $fname = $conn->real_escape_string($_POST['fname']);
                     $lname = $conn->real_escape_string($_POST['lname']);
